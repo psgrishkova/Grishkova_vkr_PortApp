@@ -18,7 +18,7 @@ namespace Grishkova_vkr_PortApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WorkingDay());
+            Application.Run(new ReferenceDataForm());
         }
     }
 }

@@ -7,13 +7,13 @@ namespace Grishkova_vkr_PortApp.Controllers.ReferenceData
     {
         private const long companyId = 1;
 
-        private vpdbDataSetTableAdapters.СудноTableAdapter adapter;
-        private vpdbDataSet.СудноDataTable table;
+        private demoDataSetTableAdapters.СудноTableAdapter adapter;
+        private demoDataSet.СудноDataTable table;
 
         public VesselController(System.ComponentModel.Component adapter, System.Data.DataTable table)
         {
-            this.adapter = (vpdbDataSetTableAdapters.СудноTableAdapter)adapter;
-            this.table = (vpdbDataSet.СудноDataTable)table;
+            this.adapter = (demoDataSetTableAdapters.СудноTableAdapter)adapter;
+            this.table = (demoDataSet.СудноDataTable)table;
             fill();
         }
 
@@ -36,8 +36,8 @@ namespace Grishkova_vkr_PortApp.Controllers.ReferenceData
 
         public void remove(object[] data)
         {
-            adapter.Delete((string)data[0], (DateTime)data[1], (string)data[2], (string)data[3], Convert.ToInt32(data[4]), companyId);
-            fill();
+                adapter.Delete((string)data[0], (DateTime)data[1], (string)data[2], (string)data[3], Convert.ToInt32(data[4]), companyId);
+                fill();
         }
 
         public void set(object[] data, object[] original_data)

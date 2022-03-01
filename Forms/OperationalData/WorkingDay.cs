@@ -20,7 +20,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MessageBox.Show(dateTimePicker.Value.ToShortDateString());
-             навигацияTableAdapter1.GetNavNumByDate("17.04.21");
+             //навигацияTableAdapter1.GetNavNumByDate("17.04.21");
         }
     }
 }
