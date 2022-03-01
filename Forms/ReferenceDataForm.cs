@@ -3,13 +3,8 @@ using Grishkova_vkr_PortApp.Controllers.ReferenceData;
 using Grishkova_vkr_PortApp.Forms.addForms;
 using Grishkova_vkr_PortApp.Forms.addSetForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grishkova_vkr_PortApp.Forms
@@ -24,10 +19,6 @@ namespace Grishkova_vkr_PortApp.Forms
             InitializeComponent();
         }
 
-        private void ReferenceDataForm_Load(object sender, EventArgs e)
-        {
-            setDataBySelectedPage(0);
-        }
 
         private void add_button_Click(object sender, EventArgs e)
         {
@@ -36,11 +27,18 @@ namespace Grishkova_vkr_PortApp.Forms
 
         private void delete_button_Click(object sender, EventArgs e)
         {
-            if (grid.SelectedRows.Count == 0)
-                MessageBox.Show("Выберите строку для удаления");
-            else
+            try
             {
-                controller.remove(grid.SelectedRows[0].Cells.Cast<DataGridViewCell>().ToList().Select(x => x.Value).ToArray());
+                if (grid.SelectedRows.Count == 0)
+                    MessageBox.Show("Выберите строку для удаления");
+                else
+                {
+                    controller.remove(grid.SelectedRows[0].Cells.Cast<DataGridViewCell>().ToList().Select(x => x.Value).ToArray());
+                }
+            }
+            catch(System.Data.SqlClient.SqlException ex)
+            {
+                MessageBox.Show("Выбранные данные уже используются в формировании рейса. Прежде, удалите данные о рейсе.");
             }
         }
 
@@ -64,13 +62,13 @@ namespace Grishkova_vkr_PortApp.Forms
             switch (pageIndex)
             {
                 case 0:
-                    controller = new VesselController(this.судноTableAdapter2, this.vpdbDataSet.Судно);
+                    controller = new VesselController(this.судноTableAdapter, this.demoDataSet.Судно);
                     break;
                 case 1:
-                    controller = new NavController(this.навигацияTableAdapter1, this.vpdbDataSet.Навигация);
+                    controller = new NavController(this.навигацияTableAdapter, this.demoDataSet.Навигация);
                     break;
                 case 2:
-                    controller = new RouteController(this.маршрутTableAdapter1, this.vpdbDataSet.Маршрут);
+                    controller = new RouteController(this.маршрутTableAdapter, this.demoDataSet.Маршрут);
                     break;
             }
             //
@@ -130,9 +128,9 @@ namespace Grishkova_vkr_PortApp.Forms
             судноBindingSource.RemoveFilter();
         }
 
-        private void ReferenceDataForm_Load_1(object sender, EventArgs e)
+        private void ReferenceDataForm_Load_2(object sender, EventArgs e)
         {
-
+            setDataBySelectedPage(0);
         }
     }
 }

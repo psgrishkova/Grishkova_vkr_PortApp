@@ -30,8 +30,8 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
         private void InitializeComponent()
         {
             this.num_label = new System.Windows.Forms.Label();
-            this.num_textBox = new System.Windows.Forms.TextBox();
             this.name_textBox = new System.Windows.Forms.TextBox();
+            this.num_textBox = new System.Windows.Forms.TextBox();
             this.name_label = new System.Windows.Forms.Label();
             this.start_textBox = new System.Windows.Forms.TextBox();
             this.start_label = new System.Windows.Forms.Label();
@@ -51,19 +51,19 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             this.num_label.TabIndex = 0;
             this.num_label.Text = "Номер";
             // 
-            // num_textBox
-            // 
-            this.num_textBox.Location = new System.Drawing.Point(127, 51);
-            this.num_textBox.Name = "num_textBox";
-            this.num_textBox.Size = new System.Drawing.Size(100, 20);
-            this.num_textBox.TabIndex = 1;
-            // 
             // name_textBox
             // 
             this.name_textBox.Location = new System.Drawing.Point(127, 25);
             this.name_textBox.Name = "name_textBox";
             this.name_textBox.Size = new System.Drawing.Size(100, 20);
-            this.name_textBox.TabIndex = 3;
+            this.name_textBox.TabIndex = 1;
+            // 
+            // num_textBox
+            // 
+            this.num_textBox.Location = new System.Drawing.Point(127, 51);
+            this.num_textBox.Name = "num_textBox";
+            this.num_textBox.Size = new System.Drawing.Size(100, 20);
+            this.num_textBox.TabIndex = 3;
             // 
             // name_label
             // 
@@ -144,9 +144,9 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             this.Controls.Add(this.end_label);
             this.Controls.Add(this.start_textBox);
             this.Controls.Add(this.start_label);
-            this.Controls.Add(this.name_textBox);
-            this.Controls.Add(this.name_label);
             this.Controls.Add(this.num_textBox);
+            this.Controls.Add(this.name_label);
+            this.Controls.Add(this.name_textBox);
             this.Controls.Add(this.num_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -162,8 +162,8 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
         #endregion
 
         private System.Windows.Forms.Label num_label;
-        private System.Windows.Forms.TextBox num_textBox;
         private System.Windows.Forms.TextBox name_textBox;
+        private System.Windows.Forms.TextBox num_textBox;
         private System.Windows.Forms.Label name_label;
         private System.Windows.Forms.TextBox start_textBox;
         private System.Windows.Forms.Label start_label;
