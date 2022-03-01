@@ -34,7 +34,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.навигацияTableAdapter1 = new Grishkova_vkr_PortApp.vpdbDataSetTableAdapters.НавигацияTableAdapter();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
@@ -80,10 +79,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.comboBox1.Size = new System.Drawing.Size(125, 21);
             this.comboBox1.TabIndex = 23;
             // 
-            // навигацияTableAdapter1
-            // 
-            this.навигацияTableAdapter1.ClearBeforeFill = true;
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -120,7 +115,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private vpdbDataSetTableAdapters.НавигацияTableAdapter навигацияTableAdapter1;
         private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

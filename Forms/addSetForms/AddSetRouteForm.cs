@@ -20,19 +20,22 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
         {
             InitializeComponent();
             this.controller = controller;
-
+            
             if (data != null)
             {
                 this.data = data;
                 action = false;
+                
                 setData();
             }
+            num_textBox.Enabled = action;
         }
 
         private void setData()
         {
-            name_textBox.Text = (string)data[0];
+
             num_textBox.Text = data[1].ToString();
+            name_textBox.Text =  (string)data[0];
             start_textBox.Text = (string)data[2];
             end_textBox.Text = (string)data[3];
             desc_textBox.Text = (string)data[4];

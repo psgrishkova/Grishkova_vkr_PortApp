@@ -33,9 +33,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.date_label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.vpdbDataSet = new Grishkova_vkr_PortApp.vpdbDataSet();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.vpdbDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // monthCalendar
@@ -73,11 +71,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.button1.Text = "Продолжить";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // vpdbDataSet
-            // 
-            this.vpdbDataSet.DataSetName = "vpdbDataSet";
-            this.vpdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -103,7 +96,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Учет топлива";
             this.Load += new System.EventHandler(this.FuelAccountingForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vpdbDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,7 +106,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         private System.Windows.Forms.Label date_label;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private vpdbDataSet vpdbDataSet;
         private System.Windows.Forms.ComboBox comboBox1;
     }
 }

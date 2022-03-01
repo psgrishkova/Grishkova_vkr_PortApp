@@ -30,171 +30,445 @@ namespace Grishkova_vkr_PortApp.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.vpdbDataSet3 = new Grishkova_vkr_PortApp.vpdbDataSet();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.судноTableAdapter3 = new Grishkova_vkr_PortApp.vpdbDataSetTableAdapters.СудноTableAdapter();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.referenceData_groupBox = new System.Windows.Forms.GroupBox();
+            this.getBy_button = new System.Windows.Forms.Button();
+            this.getBy_comboBox = new System.Windows.Forms.ComboBox();
+            this.getBy_textBox = new System.Windows.Forms.TextBox();
+            this.search_label = new System.Windows.Forms.Label();
+            this.cancel_button = new System.Windows.Forms.Button();
+            this.delete_button = new System.Windows.Forms.Button();
+            this.set_button = new System.Windows.Forms.Button();
+            this.add_button = new System.Windows.Forms.Button();
+            this.menu = new System.Windows.Forms.MenuStrip();
+            this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.referenceData_tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.регистрационныйномерсуднаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датапоследнегоТОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиесуднаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.типсуднаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.вместимостьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idкомпанииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.судноBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.demoDataSet = new Grishkova_vkr_PortApp.demoDataSet();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.номернавигационногопериодаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаначаланавигацииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датазавершениянавигацииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.навигацияBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            ((System.ComponentModel.ISupportInitialize)(this.vpdbDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.судноTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.СудноTableAdapter();
+            this.навигацияTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.НавигацияTableAdapter();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.маршрутBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.маршрутTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.МаршрутTableAdapter();
+            this.названиемаршрутаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.номермаршрутаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.пунктотправленияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.пунктприбытияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.описаниемаршрутаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenceData_groupBox.SuspendLayout();
+            this.menu.SuspendLayout();
+            this.referenceData_tabControl.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.судноBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.навигацияBindingSource)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.маршрутBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // vpdbDataSet3
+            // referenceData_groupBox
             // 
-            this.vpdbDataSet3.DataSetName = "vpdbDataSet";
-            this.vpdbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.referenceData_groupBox.Controls.Add(this.getBy_button);
+            this.referenceData_groupBox.Controls.Add(this.getBy_comboBox);
+            this.referenceData_groupBox.Controls.Add(this.getBy_textBox);
+            this.referenceData_groupBox.Controls.Add(this.search_label);
+            this.referenceData_groupBox.Controls.Add(this.cancel_button);
+            this.referenceData_groupBox.Controls.Add(this.delete_button);
+            this.referenceData_groupBox.Controls.Add(this.set_button);
+            this.referenceData_groupBox.Controls.Add(this.add_button);
+            this.referenceData_groupBox.Location = new System.Drawing.Point(12, 27);
+            this.referenceData_groupBox.Name = "referenceData_groupBox";
+            this.referenceData_groupBox.Size = new System.Drawing.Size(483, 86);
+            this.referenceData_groupBox.TabIndex = 0;
+            this.referenceData_groupBox.TabStop = false;
+            this.referenceData_groupBox.Text = "Работа с данными";
             // 
-            // bindingSource1
+            // getBy_button
             // 
-            this.bindingSource1.DataMember = "Судно";
-            this.bindingSource1.DataSource = this.vpdbDataSet3;
+            this.getBy_button.Location = new System.Drawing.Point(299, 47);
+            this.getBy_button.Name = "getBy_button";
+            this.getBy_button.Size = new System.Drawing.Size(75, 23);
+            this.getBy_button.TabIndex = 7;
+            this.getBy_button.Text = "Найти";
+            this.getBy_button.UseVisualStyleBackColor = true;
+            this.getBy_button.Click += new System.EventHandler(this.getBy_button_Click);
             // 
-            // судноTableAdapter3
+            // getBy_comboBox
             // 
-            this.судноTableAdapter3.ClearBeforeFill = true;
+            this.getBy_comboBox.FormattingEnabled = true;
+            this.getBy_comboBox.Location = new System.Drawing.Point(66, 49);
+            this.getBy_comboBox.Name = "getBy_comboBox";
+            this.getBy_comboBox.Size = new System.Drawing.Size(121, 21);
+            this.getBy_comboBox.TabIndex = 6;
             // 
-            // groupBox2
+            // getBy_textBox
             // 
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 27);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(453, 100);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.getBy_textBox.Location = new System.Drawing.Point(193, 49);
+            this.getBy_textBox.Name = "getBy_textBox";
+            this.getBy_textBox.Size = new System.Drawing.Size(100, 20);
+            this.getBy_textBox.TabIndex = 5;
             // 
-            // menuStrip2
+            // search_label
             // 
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(690, 24);
-            this.menuStrip2.TabIndex = 1;
-            this.menuStrip2.Text = "menuStrip2";
+            this.search_label.AutoSize = true;
+            this.search_label.Location = new System.Drawing.Point(6, 53);
+            this.search_label.Name = "search_label";
+            this.search_label.Size = new System.Drawing.Size(54, 13);
+            this.search_label.TabIndex = 4;
+            this.search_label.Text = "Поиск по";
             // 
-            // tabControl1
+            // cancel_button
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 134);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(457, 243);
-            this.tabControl1.TabIndex = 2;
+            this.cancel_button.Location = new System.Drawing.Point(380, 46);
+            this.cancel_button.Name = "cancel_button";
+            this.cancel_button.Size = new System.Drawing.Size(75, 23);
+            this.cancel_button.TabIndex = 3;
+            this.cancel_button.Text = "Сбросить";
+            this.cancel_button.UseVisualStyleBackColor = true;
+            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
+            // 
+            // delete_button
+            // 
+            this.delete_button.Location = new System.Drawing.Point(319, 19);
+            this.delete_button.Name = "delete_button";
+            this.delete_button.Size = new System.Drawing.Size(75, 23);
+            this.delete_button.TabIndex = 2;
+            this.delete_button.Text = "Удалить";
+            this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            // 
+            // set_button
+            // 
+            this.set_button.Location = new System.Drawing.Point(224, 19);
+            this.set_button.Name = "set_button";
+            this.set_button.Size = new System.Drawing.Size(75, 23);
+            this.set_button.TabIndex = 1;
+            this.set_button.Text = "Изменить";
+            this.set_button.UseVisualStyleBackColor = true;
+            this.set_button.Click += new System.EventHandler(this.set_button_Click);
+            // 
+            // add_button
+            // 
+            this.add_button.Location = new System.Drawing.Point(134, 19);
+            this.add_button.Name = "add_button";
+            this.add_button.Size = new System.Drawing.Size(75, 23);
+            this.add_button.TabIndex = 0;
+            this.add_button.Text = "Добавить";
+            this.add_button.UseVisualStyleBackColor = true;
+            this.add_button.Click += new System.EventHandler(this.add_button_Click);
+            // 
+            // menu
+            // 
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.менюToolStripMenuItem,
+            this.справкаToolStripMenuItem,
+            this.выходToolStripMenuItem});
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(511, 24);
+            this.menu.TabIndex = 1;
+            this.menu.Text = "menuStrip3";
+            // 
+            // менюToolStripMenuItem
+            // 
+            this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
+            this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.менюToolStripMenuItem.Text = "Меню";
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.выходToolStripMenuItem.Text = "Выход";
+            // 
+            // referenceData_tabControl
+            // 
+            this.referenceData_tabControl.Controls.Add(this.tabPage1);
+            this.referenceData_tabControl.Controls.Add(this.tabPage2);
+            this.referenceData_tabControl.Controls.Add(this.tabPage3);
+            this.referenceData_tabControl.Location = new System.Drawing.Point(12, 120);
+            this.referenceData_tabControl.Name = "referenceData_tabControl";
+            this.referenceData_tabControl.SelectedIndex = 0;
+            this.referenceData_tabControl.Size = new System.Drawing.Size(487, 236);
+            this.referenceData_tabControl.TabIndex = 2;
+            this.referenceData_tabControl.SelectedIndexChanged += new System.EventHandler(this.referenceData_tabControl_SelectedIndexChanged);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(449, 217);
+            this.tabPage1.Size = new System.Drawing.Size(479, 210);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Судно";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.регистрационныйномерсуднаDataGridViewTextBoxColumn,
+            this.датапоследнегоТОDataGridViewTextBoxColumn,
+            this.названиесуднаDataGridViewTextBoxColumn,
+            this.типсуднаDataGridViewTextBoxColumn,
+            this.вместимостьDataGridViewTextBoxColumn,
+            this.idкомпанииDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.судноBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(466, 197);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // регистрационныйномерсуднаDataGridViewTextBoxColumn
+            // 
+            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.DataPropertyName = "Регистрационный_номер_судна";
+            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.HeaderText = "Регистрационный_номер_судна";
+            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.Name = "регистрационныйномерсуднаDataGridViewTextBoxColumn";
+            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // датапоследнегоТОDataGridViewTextBoxColumn
+            // 
+            this.датапоследнегоТОDataGridViewTextBoxColumn.DataPropertyName = "Дата_последнего_ТО";
+            this.датапоследнегоТОDataGridViewTextBoxColumn.HeaderText = "Дата_последнего_ТО";
+            this.датапоследнегоТОDataGridViewTextBoxColumn.Name = "датапоследнегоТОDataGridViewTextBoxColumn";
+            this.датапоследнегоТОDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // названиесуднаDataGridViewTextBoxColumn
+            // 
+            this.названиесуднаDataGridViewTextBoxColumn.DataPropertyName = "Название_судна";
+            this.названиесуднаDataGridViewTextBoxColumn.HeaderText = "Название_судна";
+            this.названиесуднаDataGridViewTextBoxColumn.Name = "названиесуднаDataGridViewTextBoxColumn";
+            this.названиесуднаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // типсуднаDataGridViewTextBoxColumn
+            // 
+            this.типсуднаDataGridViewTextBoxColumn.DataPropertyName = "Тип_судна";
+            this.типсуднаDataGridViewTextBoxColumn.HeaderText = "Тип_судна";
+            this.типсуднаDataGridViewTextBoxColumn.Name = "типсуднаDataGridViewTextBoxColumn";
+            this.типсуднаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // вместимостьDataGridViewTextBoxColumn
+            // 
+            this.вместимостьDataGridViewTextBoxColumn.DataPropertyName = "Вместимость";
+            this.вместимостьDataGridViewTextBoxColumn.HeaderText = "Вместимость";
+            this.вместимостьDataGridViewTextBoxColumn.Name = "вместимостьDataGridViewTextBoxColumn";
+            this.вместимостьDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idкомпанииDataGridViewTextBoxColumn
+            // 
+            this.idкомпанииDataGridViewTextBoxColumn.DataPropertyName = "id_компании";
+            this.idкомпанииDataGridViewTextBoxColumn.HeaderText = "id_компании";
+            this.idкомпанииDataGridViewTextBoxColumn.Name = "idкомпанииDataGridViewTextBoxColumn";
+            this.idкомпанииDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // судноBindingSource
+            // 
+            this.судноBindingSource.DataMember = "Судно";
+            this.судноBindingSource.DataSource = this.demoDataSet;
+            // 
+            // demoDataSet
+            // 
+            this.demoDataSet.DataSetName = "demoDataSet";
+            this.demoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(534, 217);
+            this.tabPage2.Size = new System.Drawing.Size(479, 210);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Навигация";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // dataGridView2
             // 
-            this.button1.Location = new System.Drawing.Point(8, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.номернавигационногопериодаDataGridViewTextBoxColumn,
+            this.датаначаланавигацииDataGridViewTextBoxColumn,
+            this.датазавершениянавигацииDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.навигацияBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(466, 197);
+            this.dataGridView2.TabIndex = 1;
             // 
-            // button2
+            // номернавигационногопериодаDataGridViewTextBoxColumn
             // 
-            this.button2.Location = new System.Drawing.Point(89, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.номернавигационногопериодаDataGridViewTextBoxColumn.DataPropertyName = "Номер_навигационного_периода";
+            this.номернавигационногопериодаDataGridViewTextBoxColumn.HeaderText = "Номер_навигационного_периода";
+            this.номернавигационногопериодаDataGridViewTextBoxColumn.Name = "номернавигационногопериодаDataGridViewTextBoxColumn";
+            this.номернавигационногопериодаDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // button3
+            // датаначаланавигацииDataGridViewTextBoxColumn
             // 
-            this.button3.Location = new System.Drawing.Point(171, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.датаначаланавигацииDataGridViewTextBoxColumn.DataPropertyName = "Дата_начала_навигации";
+            this.датаначаланавигацииDataGridViewTextBoxColumn.HeaderText = "Дата_начала_навигации";
+            this.датаначаланавигацииDataGridViewTextBoxColumn.Name = "датаначаланавигацииDataGridViewTextBoxColumn";
+            this.датаначаланавигацииDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // label1
+            // датазавершениянавигацииDataGridViewTextBoxColumn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Поиск по";
+            this.датазавершениянавигацииDataGridViewTextBoxColumn.DataPropertyName = "Дата_завершения_навигации";
+            this.датазавершениянавигацииDataGridViewTextBoxColumn.HeaderText = "Дата_завершения_навигации";
+            this.датазавершениянавигацииDataGridViewTextBoxColumn.Name = "датазавершениянавигацииDataGridViewTextBoxColumn";
+            this.датазавершениянавигацииDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // textBox1
+            // навигацияBindingSource
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(179, 66);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.навигацияBindingSource.DataMember = "Навигация";
+            this.навигацияBindingSource.DataSource = this.demoDataSet;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(534, 217);
+            this.tabPage3.Size = new System.Drawing.Size(479, 210);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Маршрут";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // судноTableAdapter
+            // 
+            this.судноTableAdapter.ClearBeforeFill = true;
+            // 
+            // навигацияTableAdapter
+            // 
+            this.навигацияTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.названиемаршрутаDataGridViewTextBoxColumn,
+            this.номермаршрутаDataGridViewTextBoxColumn,
+            this.пунктотправленияDataGridViewTextBoxColumn,
+            this.пунктприбытияDataGridViewTextBoxColumn,
+            this.описаниемаршрутаDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.маршрутBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(466, 197);
+            this.dataGridView3.TabIndex = 2;
+            // 
+            // маршрутBindingSource
+            // 
+            this.маршрутBindingSource.DataMember = "Маршрут";
+            this.маршрутBindingSource.DataSource = this.demoDataSet;
+            // 
+            // маршрутTableAdapter
+            // 
+            this.маршрутTableAdapter.ClearBeforeFill = true;
+            // 
+            // названиемаршрутаDataGridViewTextBoxColumn
+            // 
+            this.названиемаршрутаDataGridViewTextBoxColumn.DataPropertyName = "Название_маршрута";
+            this.названиемаршрутаDataGridViewTextBoxColumn.HeaderText = "Название_маршрута";
+            this.названиемаршрутаDataGridViewTextBoxColumn.Name = "названиемаршрутаDataGridViewTextBoxColumn";
+            this.названиемаршрутаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // номермаршрутаDataGridViewTextBoxColumn
+            // 
+            this.номермаршрутаDataGridViewTextBoxColumn.DataPropertyName = "Номер_маршрута";
+            this.номермаршрутаDataGridViewTextBoxColumn.HeaderText = "Номер_маршрута";
+            this.номермаршрутаDataGridViewTextBoxColumn.Name = "номермаршрутаDataGridViewTextBoxColumn";
+            this.номермаршрутаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // пунктотправленияDataGridViewTextBoxColumn
+            // 
+            this.пунктотправленияDataGridViewTextBoxColumn.DataPropertyName = "Пункт_отправления";
+            this.пунктотправленияDataGridViewTextBoxColumn.HeaderText = "Пункт_отправления";
+            this.пунктотправленияDataGridViewTextBoxColumn.Name = "пунктотправленияDataGridViewTextBoxColumn";
+            this.пунктотправленияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // пунктприбытияDataGridViewTextBoxColumn
+            // 
+            this.пунктприбытияDataGridViewTextBoxColumn.DataPropertyName = "Пункт_прибытия";
+            this.пунктприбытияDataGridViewTextBoxColumn.HeaderText = "Пункт_прибытия";
+            this.пунктприбытияDataGridViewTextBoxColumn.Name = "пунктприбытияDataGridViewTextBoxColumn";
+            this.пунктприбытияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // описаниемаршрутаDataGridViewTextBoxColumn
+            // 
+            this.описаниемаршрутаDataGridViewTextBoxColumn.DataPropertyName = "Описание_маршрута";
+            this.описаниемаршрутаDataGridViewTextBoxColumn.HeaderText = "Описание_маршрута";
+            this.описаниемаршрутаDataGridViewTextBoxColumn.Name = "описаниемаршрутаDataGridViewTextBoxColumn";
+            this.описаниемаршрутаDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ReferenceDataForm
             // 
-            this.ClientSize = new System.Drawing.Size(690, 389);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.menuStrip2);
-            this.MainMenuStrip = this.menuStrip2;
+            this.ClientSize = new System.Drawing.Size(511, 368);
+            this.Controls.Add(this.referenceData_tabControl);
+            this.Controls.Add(this.referenceData_groupBox);
+            this.Controls.Add(this.menu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MainMenuStrip = this.menu;
+            this.MaximizeBox = false;
             this.Name = "ReferenceDataForm";
-            this.Load += new System.EventHandler(this.ReferenceDataForm_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.vpdbDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Справочные данные";
+            this.Load += new System.EventHandler(this.ReferenceDataForm_Load_2);
+            this.referenceData_groupBox.ResumeLayout(false);
+            this.referenceData_groupBox.PerformLayout();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
+            this.referenceData_tabControl.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.судноBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.навигацияBindingSource)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.маршрутBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,99 +476,47 @@ namespace Grishkova_vkr_PortApp.Forms
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label search_label;
-        private System.Windows.Forms.ComboBox getBy_comboBox;
-        private System.Windows.Forms.TextBox getBy_textBox;
-        private System.Windows.Forms.Button getBy_button;
+        
+        private System.Windows.Forms.GroupBox referenceData_groupBox;
+        private System.Windows.Forms.Button cancel_button;
         private System.Windows.Forms.Button delete_button;
         private System.Windows.Forms.Button set_button;
         private System.Windows.Forms.Button add_button;
-        private System.Windows.Forms.Button cancel_button;
-        private System.Windows.Forms.TabPage RouteTabPage;
-        private System.Windows.Forms.DataGridView route_dataGridView;
-        private System.Windows.Forms.TabPage VesselTabPage;
-        private System.Windows.Forms.DataGridView vessel_dataGridView;
+        private System.Windows.Forms.Button getBy_button;
+        private System.Windows.Forms.MenuStrip menu;
+        private System.Windows.Forms.ComboBox getBy_comboBox;
+        private System.Windows.Forms.TextBox getBy_textBox;
+        private System.Windows.Forms.Label search_label;
         private System.Windows.Forms.TabControl referenceData_tabControl;
-        private System.Windows.Forms.TabPage NabTabPage;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TabPage accauntTabPage;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private vpdbDataSet vpdbDataSet;
-        private vpdbDataSetTableAdapters.СудноTableAdapter судноTableAdapter;
+        private demoDataSet demoDataSet;
+        private System.Windows.Forms.BindingSource судноBindingSource;
+        private demoDataSetTableAdapters.СудноTableAdapter судноTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn регистрационныйномерсуднаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датапоследнегоТОDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn названиесуднаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn типсуднаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn вместимостьDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idкомпанииDataGridViewTextBoxColumn;
-        private vpdbDataSetTableAdapters.НавигацияTableAdapter навигацияTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.BindingSource навигацияBindingSource;
+        private demoDataSetTableAdapters.НавигацияTableAdapter навигацияTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn номернавигационногопериодаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датаначаланавигацииDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датазавершениянавигацииDataGridViewTextBoxColumn;
-        private vpdbDataSetTableAdapters.МаршрутTableAdapter маршрутTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.BindingSource маршрутBindingSource;
+        private demoDataSetTableAdapters.МаршрутTableAdapter маршрутTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn названиемаршрутаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn номермаршрутаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn пунктотправленияDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn пунктприбытияDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn описаниемаршрутаDataGridViewTextBoxColumn;
-        private vpdbDataSetTableAdapters.АккаунтTableAdapter аккаунтTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn логинDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn парольDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn рольDataGridViewTextBoxColumn;
-        private vpdbDataSet vpdbDataSet1;
-        private vpdbDataSetTableAdapters.СудноTableAdapter судноTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private vpdbDataSet vpdbDataSet2;
-        private System.Windows.Forms.BindingSource судноBindingSource;
-        private vpdbDataSetTableAdapters.СудноTableAdapter судноTableAdapter2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.BindingSource навигацияBindingSource;
-        private vpdbDataSetTableAdapters.НавигацияTableAdapter навигацияTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.BindingSource маршрутBindingSource;
-        private vpdbDataSetTableAdapters.МаршрутTableAdapter маршрутTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.BindingSource аккаунтBindingSource;
-        private vpdbDataSetTableAdapters.АккаунтTableAdapter аккаунтTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private vpdbDataSet vpdbDataSet3;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private vpdbDataSetTableAdapters.СудноTableAdapter судноTableAdapter3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
     }
 }
