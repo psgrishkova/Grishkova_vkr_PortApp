@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ReferenceData\AccountController.cs" />
+    <Compile Include="Controllers\ReferenceData\CategoryController.cs" />
+    <Compile Include="Controllers\ReferenceData\CompanyController.cs" />
     <Compile Include="Controllers\ReferenceData\CRUDController.cs" />
     <Compile Include="Controllers\ReferenceData\NavController.cs" />
     <Compile Include="Controllers\ReferenceData\RouteController.cs" />
@@ -61,6 +63,24 @@
     </Compile>
     <Compile Include="Exceptions\DataNotFoundException.cs" />
     <Compile Include="Exceptions\IncorrectDataException.cs" />
+    <Compile Include="Forms\addSetForms\AddSetAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\addSetForms\AddSetAccount.Designer.cs">
+      <DependentUpon>AddSetAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\addSetForms\AddSetCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\addSetForms\AddSetCategoryForm.Designer.cs">
+      <DependentUpon>AddSetCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\addSetForms\AddSetCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\addSetForms\AddSetCompanyForm.Designer.cs">
+      <DependentUpon>AddSetCompanyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\addSetForms\AddSetNavForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +143,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\addSetForms\AddSetAccount.resx">
+      <DependentUpon>AddSetAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\addSetForms\AddSetCategoryForm.resx">
+      <DependentUpon>AddSetCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\addSetForms\AddSetCompanyForm.resx">
+      <DependentUpon>AddSetCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\addSetForms\AddSetNavForm.resx">
       <DependentUpon>AddSetNavForm.cs</DependentUpon>
     </EmbeddedResource>
