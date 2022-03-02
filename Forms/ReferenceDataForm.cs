@@ -70,8 +70,16 @@ namespace Grishkova_vkr_PortApp.Forms
                 case 2:
                     controller = new RouteController(this.маршрутTableAdapter, this.demoDataSet.Маршрут);
                     break;
+                case 3:
+                    controller = new AccountController(this.аккаунтTableAdapter, this.demoDataSet.Аккаунт);
+                    break;
+                case 4:
+                    controller = new CompanyController(this.компанияTableAdapter, this.demoDataSet.Компания);
+                    break;
+                case 5:
+                    controller = new CategoryController(this.категория_гражданTableAdapter, this.demoDataSet.Категория_граждан);
+                    break;
             }
-            //
             grid = (DataGridView)referenceData_tabControl.SelectedTab.Controls[0];
             setComboBoxValues(grid);
         }
@@ -101,7 +109,13 @@ namespace Grishkova_vkr_PortApp.Forms
                     addSetForm = new AddSetRouteForm(controller, data);
                     break;
                 case 3:
-
+                    addSetForm = new AddSetAccount(controller, data);
+                    break;
+                case 4:
+                    addSetForm = new AddSetCompanyForm(controller, data);
+                    break;
+                case 5:
+                    addSetForm = new AddSetCategoryForm(controller, data);
                     break;
             }
             addSetForm.Show();
@@ -130,6 +144,10 @@ namespace Grishkova_vkr_PortApp.Forms
 
         private void ReferenceDataForm_Load_2(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "demoDataSet.Персонал". При необходимости она может быть перемещена или удалена.
+            this.персоналTableAdapter.Fill(this.demoDataSet.Персонал);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "demoDataSet.Категория_граждан". При необходимости она может быть перемещена или удалена.
+            this.категория_гражданTableAdapter.Fill(this.demoDataSet.Категория_граждан);
             setDataBySelectedPage(0);
         }
     }
