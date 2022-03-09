@@ -56,6 +56,8 @@ namespace Grishkova_vkr_PortApp.Forms
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.регистрационныйномерсуднаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датапоследнегоТОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.названиесуднаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,22 +88,17 @@ namespace Grishkova_vkr_PortApp.Forms
             this.компанияBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.категорияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.категориягражданBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.фИОсотрудникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.номертелефонаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датарожденияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.персоналBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.судноTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.СудноTableAdapter();
             this.навигацияTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.НавигацияTableAdapter();
             this.маршрутTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.МаршрутTableAdapter();
             this.аккаунтTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.АккаунтTableAdapter();
             this.компанияTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.КомпанияTableAdapter();
             this.категория_гражданTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Категория_гражданTableAdapter();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.персоналBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.персоналTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.ПерсоналTableAdapter();
-            this.фИОсотрудникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.номертелефонаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.датарожденияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.рольDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idсотрудникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idкомпанииDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.referenceData_groupBox.SuspendLayout();
             this.menu.SuspendLayout();
             this.referenceData_tabControl.SuspendLayout();
@@ -117,6 +114,8 @@ namespace Grishkova_vkr_PortApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.судноBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.навигацияBindingSource)).BeginInit();
@@ -124,8 +123,6 @@ namespace Grishkova_vkr_PortApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.аккаунтBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.компанияBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.категориягражданBindingSource)).BeginInit();
-            this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -444,6 +441,36 @@ namespace Grishkova_vkr_PortApp.Forms
             this.dataGridView6.Size = new System.Drawing.Size(466, 197);
             this.dataGridView6.TabIndex = 5;
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.dataGridView7);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(479, 210);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Персонал";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.AllowUserToAddRows = false;
+            this.dataGridView7.AllowUserToDeleteRows = false;
+            this.dataGridView7.AutoGenerateColumns = false;
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.фИОсотрудникаDataGridViewTextBoxColumn,
+            this.номертелефонаDataGridViewTextBoxColumn1,
+            this.датарожденияDataGridViewTextBoxColumn});
+            this.dataGridView7.DataSource = this.персоналBindingSource;
+            this.dataGridView7.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView7.MultiSelect = false;
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.ReadOnly = true;
+            this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView7.Size = new System.Drawing.Size(466, 197);
+            this.dataGridView7.TabIndex = 6;
+            // 
             // регистрационныйномерсуднаDataGridViewTextBoxColumn
             // 
             this.регистрационныйномерсуднаDataGridViewTextBoxColumn.DataPropertyName = "Регистрационный_номер_судна";
@@ -640,6 +667,32 @@ namespace Grishkova_vkr_PortApp.Forms
             this.категориягражданBindingSource.DataMember = "Категория_граждан";
             this.категориягражданBindingSource.DataSource = this.demoDataSet;
             // 
+            // фИОсотрудникаDataGridViewTextBoxColumn
+            // 
+            this.фИОсотрудникаDataGridViewTextBoxColumn.DataPropertyName = "ФИО_сотрудника";
+            this.фИОсотрудникаDataGridViewTextBoxColumn.HeaderText = "ФИО_сотрудника";
+            this.фИОсотрудникаDataGridViewTextBoxColumn.Name = "фИОсотрудникаDataGridViewTextBoxColumn";
+            this.фИОсотрудникаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // номертелефонаDataGridViewTextBoxColumn1
+            // 
+            this.номертелефонаDataGridViewTextBoxColumn1.DataPropertyName = "Номер_телефона";
+            this.номертелефонаDataGridViewTextBoxColumn1.HeaderText = "Номер_телефона";
+            this.номертелефонаDataGridViewTextBoxColumn1.Name = "номертелефонаDataGridViewTextBoxColumn1";
+            this.номертелефонаDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // датарожденияDataGridViewTextBoxColumn
+            // 
+            this.датарожденияDataGridViewTextBoxColumn.DataPropertyName = "Дата_рождения";
+            this.датарожденияDataGridViewTextBoxColumn.HeaderText = "Дата_рождения";
+            this.датарожденияDataGridViewTextBoxColumn.Name = "датарожденияDataGridViewTextBoxColumn";
+            this.датарожденияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // персоналBindingSource
+            // 
+            this.персоналBindingSource.DataMember = "Персонал";
+            this.персоналBindingSource.DataSource = this.demoDataSet;
+            // 
             // судноTableAdapter
             // 
             this.судноTableAdapter.ClearBeforeFill = true;
@@ -664,88 +717,9 @@ namespace Grishkova_vkr_PortApp.Forms
             // 
             this.категория_гражданTableAdapter.ClearBeforeFill = true;
             // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.dataGridView7);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(479, 210);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Персонал";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView7
-            // 
-            this.dataGridView7.AllowUserToAddRows = false;
-            this.dataGridView7.AllowUserToDeleteRows = false;
-            this.dataGridView7.AutoGenerateColumns = false;
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.фИОсотрудникаDataGridViewTextBoxColumn,
-            this.номертелефонаDataGridViewTextBoxColumn1,
-            this.датарожденияDataGridViewTextBoxColumn,
-            this.рольDataGridViewTextBoxColumn1,
-            this.idсотрудникаDataGridViewTextBoxColumn,
-            this.idкомпанииDataGridViewTextBoxColumn1});
-            this.dataGridView7.DataSource = this.персоналBindingSource;
-            this.dataGridView7.Location = new System.Drawing.Point(7, 7);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.ReadOnly = true;
-            this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView7.Size = new System.Drawing.Size(466, 197);
-            this.dataGridView7.TabIndex = 6;
-            // 
-            // персоналBindingSource
-            // 
-            this.персоналBindingSource.DataMember = "Персонал";
-            this.персоналBindingSource.DataSource = this.demoDataSet;
-            // 
             // персоналTableAdapter
             // 
             this.персоналTableAdapter.ClearBeforeFill = true;
-            // 
-            // фИОсотрудникаDataGridViewTextBoxColumn
-            // 
-            this.фИОсотрудникаDataGridViewTextBoxColumn.DataPropertyName = "ФИО_сотрудника";
-            this.фИОсотрудникаDataGridViewTextBoxColumn.HeaderText = "ФИО_сотрудника";
-            this.фИОсотрудникаDataGridViewTextBoxColumn.Name = "фИОсотрудникаDataGridViewTextBoxColumn";
-            this.фИОсотрудникаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // номертелефонаDataGridViewTextBoxColumn1
-            // 
-            this.номертелефонаDataGridViewTextBoxColumn1.DataPropertyName = "Номер_телефона";
-            this.номертелефонаDataGridViewTextBoxColumn1.HeaderText = "Номер_телефона";
-            this.номертелефонаDataGridViewTextBoxColumn1.Name = "номертелефонаDataGridViewTextBoxColumn1";
-            this.номертелефонаDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // датарожденияDataGridViewTextBoxColumn
-            // 
-            this.датарожденияDataGridViewTextBoxColumn.DataPropertyName = "Дата_рождения";
-            this.датарожденияDataGridViewTextBoxColumn.HeaderText = "Дата_рождения";
-            this.датарожденияDataGridViewTextBoxColumn.Name = "датарожденияDataGridViewTextBoxColumn";
-            this.датарожденияDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // рольDataGridViewTextBoxColumn1
-            // 
-            this.рольDataGridViewTextBoxColumn1.DataPropertyName = "Роль";
-            this.рольDataGridViewTextBoxColumn1.HeaderText = "Роль";
-            this.рольDataGridViewTextBoxColumn1.Name = "рольDataGridViewTextBoxColumn1";
-            this.рольDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // idсотрудникаDataGridViewTextBoxColumn
-            // 
-            this.idсотрудникаDataGridViewTextBoxColumn.DataPropertyName = "id_сотрудника";
-            this.idсотрудникаDataGridViewTextBoxColumn.HeaderText = "id_сотрудника";
-            this.idсотрудникаDataGridViewTextBoxColumn.Name = "idсотрудникаDataGridViewTextBoxColumn";
-            this.idсотрудникаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idкомпанииDataGridViewTextBoxColumn1
-            // 
-            this.idкомпанииDataGridViewTextBoxColumn1.DataPropertyName = "id_компании";
-            this.idкомпанииDataGridViewTextBoxColumn1.HeaderText = "id_компании";
-            this.idкомпанииDataGridViewTextBoxColumn1.Name = "idкомпанииDataGridViewTextBoxColumn1";
-            this.idкомпанииDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // ReferenceDataForm
             // 
@@ -778,6 +752,8 @@ namespace Grishkova_vkr_PortApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.судноBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.навигацияBindingSource)).EndInit();
@@ -785,8 +761,6 @@ namespace Grishkova_vkr_PortApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.аккаунтBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.компанияBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.категориягражданBindingSource)).EndInit();
-            this.tabPage7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -865,8 +839,5 @@ namespace Grishkova_vkr_PortApp.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn фИОсотрудникаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn номертелефонаDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn датарожденияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn рольDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idсотрудникаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idкомпанииDataGridViewTextBoxColumn1;
     }
 }

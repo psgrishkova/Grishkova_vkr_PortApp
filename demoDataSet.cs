@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace Grishkova_vkr_PortApp.demoDataSetTableAdapters {
+    
+    
+    public partial class ПерсоналTableAdapter {
+    }
+}

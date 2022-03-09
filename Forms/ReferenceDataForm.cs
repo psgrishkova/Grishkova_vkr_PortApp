@@ -40,6 +40,10 @@ namespace Grishkova_vkr_PortApp.Forms
             {
                 MessageBox.Show("Выбранные данные уже используются в формировании рейса. Прежде, удалите данные о рейсе.");
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void set_button_Click(object sender, EventArgs e)
@@ -79,6 +83,9 @@ namespace Grishkova_vkr_PortApp.Forms
                 case 5:
                     controller = new CategoryController(this.категория_гражданTableAdapter, this.demoDataSet.Категория_граждан);
                     break;
+                case 6:
+                    controller = new StaffController(this.персоналTableAdapter, this.demoDataSet.Персонал);
+                    break;
             }
             grid = (DataGridView)referenceData_tabControl.SelectedTab.Controls[0];
             setComboBoxValues(grid);
@@ -117,6 +124,9 @@ namespace Grishkova_vkr_PortApp.Forms
                 case 5:
                     addSetForm = new AddSetCategoryForm(controller, data);
                     break;
+                case 6:
+                    addSetForm = new AddSetStaffForm(controller, data);
+                    break;
             }
             addSetForm.Show();
             if (addSetForm != null)
@@ -144,10 +154,6 @@ namespace Grishkova_vkr_PortApp.Forms
 
         private void ReferenceDataForm_Load_2(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "demoDataSet.Персонал". При необходимости она может быть перемещена или удалена.
-            this.персоналTableAdapter.Fill(this.demoDataSet.Персонал);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "demoDataSet.Категория_граждан". При необходимости она может быть перемещена или удалена.
-            this.категория_гражданTableAdapter.Fill(this.demoDataSet.Категория_граждан);
             setDataBySelectedPage(0);
         }
     }

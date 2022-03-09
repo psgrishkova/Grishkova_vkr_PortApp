@@ -33,7 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,6 +54,7 @@
     <Compile Include="Controllers\ReferenceData\CRUDController.cs" />
     <Compile Include="Controllers\ReferenceData\NavController.cs" />
     <Compile Include="Controllers\ReferenceData\RouteController.cs" />
+    <Compile Include="Controllers\ReferenceData\StaffController.cs" />
     <Compile Include="Controllers\ReferenceData\VesselController.cs" />
     <Compile Include="demoDataSet.cs">
       <DependentUpon>demoDataSet.xsd</DependentUpon>
@@ -92,6 +95,12 @@
     </Compile>
     <Compile Include="Forms\addSetForms\AddSetRouteForm.Designer.cs">
       <DependentUpon>AddSetRouteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\addSetForms\AddSetStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\addSetForms\AddSetStaffForm.Designer.cs">
+      <DependentUpon>AddSetStaffForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\addSetForms\addSetVesselForm.cs">
       <SubType>Form</SubType>
@@ -157,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\addSetForms\AddSetRouteForm.resx">
       <DependentUpon>AddSetRouteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\addSetForms\AddSetStaffForm.resx">
+      <DependentUpon>AddSetStaffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\addSetForms\addSetVesselForm.resx">
       <DependentUpon>addSetVesselForm.cs</DependentUpon>
