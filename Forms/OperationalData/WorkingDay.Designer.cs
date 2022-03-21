@@ -29,12 +29,22 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.date_label = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.cashierComboBox = new System.Windows.Forms.ComboBox();
+            this.навигацияTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.НавигацияTableAdapter();
+            this.персоналTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.ПерсоналTableAdapter();
+            this.кассаTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.КассаTableAdapter();
+            this.demoDataSet = new Grishkova_vkr_PortApp.demoDataSet();
+            this.кассирBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.кассирTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.КассирTableAdapter();
+            this.персоналBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.кассирBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,45 +74,70 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(110, 92);
+            this.button1.Location = new System.Drawing.Point(110, 97);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 23);
             this.button1.TabIndex = 22;
             this.button1.Text = "Продолжить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
+            // cashierComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(68, 65);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 21);
-            this.comboBox1.TabIndex = 23;
+            this.cashierComboBox.FormattingEnabled = true;
+            this.cashierComboBox.Location = new System.Drawing.Point(68, 65);
+            this.cashierComboBox.Name = "cashierComboBox";
+            this.cashierComboBox.Size = new System.Drawing.Size(125, 21);
+            this.cashierComboBox.TabIndex = 23;
             // 
-            // linkLabel1
+            // навигацияTableAdapter1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(200, 36);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(64, 13);
-            this.linkLabel1.TabIndex = 24;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Применить";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.навигацияTableAdapter1.ClearBeforeFill = true;
+            // 
+            // персоналTableAdapter1
+            // 
+            this.персоналTableAdapter1.ClearBeforeFill = true;
+            // 
+            // кассаTableAdapter1
+            // 
+            this.кассаTableAdapter1.ClearBeforeFill = true;
+            // 
+            // demoDataSet
+            // 
+            this.demoDataSet.DataSetName = "demoDataSet";
+            this.demoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // кассирBindingSource
+            // 
+            this.кассирBindingSource.DataMember = "Кассир";
+            this.кассирBindingSource.DataSource = this.demoDataSet;
+            // 
+            // кассирTableAdapter
+            // 
+            this.кассирTableAdapter.ClearBeforeFill = true;
+            // 
+            // персоналBindingSource
+            // 
+            this.персоналBindingSource.DataMember = "Персонал";
+            this.персоналBindingSource.DataSource = this.demoDataSet;
             // 
             // WorkingDay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 143);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(213, 132);
+            this.Controls.Add(this.cashierComboBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.date_label);
             this.Controls.Add(this.dateTimePicker);
             this.Name = "WorkingDay";
-            this.Text = "WorkingDay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Смена";
+            this.Load += new System.EventHandler(this.WorkingDay_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.кассирBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,7 +149,13 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         private System.Windows.Forms.Label date_label;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ComboBox cashierComboBox;
+        private demoDataSetTableAdapters.НавигацияTableAdapter навигацияTableAdapter1;
+        private demoDataSetTableAdapters.ПерсоналTableAdapter персоналTableAdapter1;
+        private demoDataSetTableAdapters.КассаTableAdapter кассаTableAdapter1;
+        private demoDataSet demoDataSet;
+        private System.Windows.Forms.BindingSource кассирBindingSource;
+        private demoDataSetTableAdapters.КассирTableAdapter кассирTableAdapter;
+        private System.Windows.Forms.BindingSource персоналBindingSource;
     }
 }
