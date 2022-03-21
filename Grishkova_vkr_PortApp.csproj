@@ -37,6 +37,7 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\OperationalData\WorkingDayController.cs" />
     <Compile Include="Controllers\ReferenceData\AccountController.cs" />
     <Compile Include="Controllers\ReferenceData\CategoryController.cs" />
     <Compile Include="Controllers\ReferenceData\CompanyController.cs" />
@@ -108,6 +110,12 @@
     <Compile Include="Forms\addSetForms\addSetVesselForm.Designer.cs">
       <DependentUpon>addSetVesselForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\addSetForms\UpdateLogbook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\addSetForms\UpdateLogbook.Designer.cs">
+      <DependentUpon>UpdateLogbook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +158,9 @@
     <Compile Include="Forms\SignInForm.Designer.cs">
       <DependentUpon>SignInForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\NavPeriod.cs" />
+    <Compile Include="Models\Ship.cs" />
+    <Compile Include="Models\Staff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\addSetForms\AddSetAccount.resx">
@@ -172,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\addSetForms\addSetVesselForm.resx">
       <DependentUpon>addSetVesselForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\addSetForms\UpdateLogbook.resx">
+      <DependentUpon>UpdateLogbook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>

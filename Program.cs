@@ -1,9 +1,6 @@
 ﻿using Grishkova_vkr_PortApp.Forms;
 using Grishkova_vkr_PortApp.Forms.OperationalData;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grishkova_vkr_PortApp
@@ -18,7 +15,7 @@ namespace Grishkova_vkr_PortApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReferenceDataForm());
+            Application.Run(new WorkingDayCaps());
         }
     }
 }
