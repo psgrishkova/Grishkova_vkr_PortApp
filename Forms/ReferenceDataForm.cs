@@ -36,11 +36,11 @@ namespace Grishkova_vkr_PortApp.Forms
                     controller.remove(grid.SelectedRows[0].Cells.Cast<DataGridViewCell>().ToList().Select(x => x.Value).ToArray());
                 }
             }
-            catch(System.Data.SqlClient.SqlException ex)
+            catch (System.Data.SqlClient.SqlException ex)
             {
                 MessageBox.Show("Выбранные данные уже используются в формировании рейса. Прежде, удалите данные о рейсе.");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -142,14 +142,64 @@ namespace Grishkova_vkr_PortApp.Forms
 
         private void getBy_button_Click(object sender, EventArgs e)
         {
+            string filter = "[" + getBy_comboBox.SelectedItem.ToString() + "] = '" + getBy_textBox.Text + "'";
             if (!string.IsNullOrEmpty(getBy_textBox.Text))
-                судноBindingSource.Filter = "[" + getBy_comboBox.SelectedItem.ToString() + "] = '" + getBy_textBox.Text + "'";
+            {
+                switch (referenceData_tabControl.SelectedIndex)
+                {
+                    case 0:
+                        судноBindingSource.Filter = filter;
+                        break;
+                    case 1:
+                        навигацияBindingSource.Filter = filter;
+                        break;
+                    case 2:
+                        маршрутBindingSource.Filter = filter;
+                        break;
+                    case 3:
+                        аккаунтBindingSource.Filter = filter;
+                        break;
+                    case 4:
+                        компанияBindingSource.Filter = filter;
+                        break;
+                    case 5:
+                        категориягражданBindingSource.Filter = filter;
+                        break;
+                    case 6:
+                        персоналBindingSource.Filter = filter;
+                        break;
+                }
+            }
             else MessageBox.Show("Введите данные для поиска");
         }
 
         private void cancel_button_Click(object sender, EventArgs e)
         {
             судноBindingSource.RemoveFilter();
+            switch (referenceData_tabControl.SelectedIndex)
+            {
+                case 0:
+                    судноBindingSource.RemoveFilter();
+                    break;
+                case 1:
+                    навигацияBindingSource.RemoveFilter();
+                    break;
+                case 2:
+                    маршрутBindingSource.RemoveFilter();
+                    break;
+                case 3:
+                    аккаунтBindingSource.RemoveFilter();
+                    break;
+                case 4:
+                    компанияBindingSource.RemoveFilter();
+                    break;
+                case 5:
+                    категориягражданBindingSource.RemoveFilter();
+                    break;
+                case 6:
+                    персоналBindingSource.RemoveFilter();
+                    break;
+            }
         }
 
         private void ReferenceDataForm_Load_2(object sender, EventArgs e)
