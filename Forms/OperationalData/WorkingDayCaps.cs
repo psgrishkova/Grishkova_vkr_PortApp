@@ -52,7 +52,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                     }
                 }
                 else if (WorkingDayController.GetLogbookByDate(вахтенный_журналTableAdapter1, dateTimePicker.Value.Date.ToString()) > 0)
-                    MessageBox.Show("Заданная смена уже прошла, редактирование не доступно");
+                    MessageBox.Show("Заданная смена уже прошла, редактирование недоступно");
                 else MessageBox.Show("Указанный день уже прошел, смену составить нельзя");
 
             }
@@ -101,16 +101,19 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             foreach (DataGridViewRow r in LogbookGridView.Rows)
                 nameComboBox.Items.Remove(r.Cells[idx].Value.ToString());
 
-            if (nameComboBox.Items.Count != 0)
+            if (nameComboBox.Items.Count == 0)
+            {
+                MessageBox.Show("Смена заполнена.");
+            }
+            else
             {
                 nameComboBox.SelectedItem = nameComboBox.Items[0];
-                idx = LogbookGridView.Columns["Название_судна"].Index;
-                foreach (DataGridViewRow r in LogbookGridView.Rows)
-                    vesselComboBox.Items.Remove(r.Cells[idx].Value.ToString());
-
-                if (vesselComboBox.Items.Count != 0) vesselComboBox.SelectedItem = vesselComboBox.Items[0];
-                else MessageBox.Show("Смена заполнена.");
             }
+            idx = LogbookGridView.Columns["Название_судна"].Index;
+            foreach (DataGridViewRow r in LogbookGridView.Rows)
+                vesselComboBox.Items.Remove(r.Cells[idx].Value.ToString());
+
+            if (vesselComboBox.Items.Count != 0) vesselComboBox.SelectedItem = vesselComboBox.Items[0];
             else MessageBox.Show("Смена заполнена.");
         }
 

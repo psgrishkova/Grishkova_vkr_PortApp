@@ -145,9 +145,9 @@ namespace Grishkova_vkr_PortApp.Forms
             // 
             // getBy_button
             // 
-            this.getBy_button.Location = new System.Drawing.Point(299, 47);
+            this.getBy_button.Location = new System.Drawing.Point(299, 49);
             this.getBy_button.Name = "getBy_button";
-            this.getBy_button.Size = new System.Drawing.Size(75, 23);
+            this.getBy_button.Size = new System.Drawing.Size(75, 21);
             this.getBy_button.TabIndex = 7;
             this.getBy_button.Text = "Найти";
             this.getBy_button.UseVisualStyleBackColor = true;
@@ -179,9 +179,9 @@ namespace Grishkova_vkr_PortApp.Forms
             // 
             // cancel_button
             // 
-            this.cancel_button.Location = new System.Drawing.Point(380, 46);
+            this.cancel_button.Location = new System.Drawing.Point(380, 49);
             this.cancel_button.Name = "cancel_button";
-            this.cancel_button.Size = new System.Drawing.Size(75, 23);
+            this.cancel_button.Size = new System.Drawing.Size(75, 21);
             this.cancel_button.TabIndex = 3;
             this.cancel_button.Text = "Сбросить";
             this.cancel_button.UseVisualStyleBackColor = true;

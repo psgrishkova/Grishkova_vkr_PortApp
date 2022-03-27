@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\OperationalData\FuelController.cs" />
     <Compile Include="Controllers\OperationalData\WorkingDayController.cs" />
     <Compile Include="Controllers\ReferenceData\AccountController.cs" />
     <Compile Include="Controllers\ReferenceData\CategoryController.cs" />
@@ -122,17 +123,29 @@
     <Compile Include="Forms\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OperationalData\Cash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OperationalData\Cash.Designer.cs">
+      <DependentUpon>Cash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OperationalData\Fuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OperationalData\Fuel.Designer.cs">
+      <DependentUpon>Fuel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OperationalData\FuelAccountingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\OperationalData\FuelAccountingForm.Designer.cs">
       <DependentUpon>FuelAccountingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\OperationalData\WorkingDay.cs">
+    <Compile Include="Forms\OperationalData\Vessels.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\OperationalData\WorkingDay.Designer.cs">
-      <DependentUpon>WorkingDay.cs</DependentUpon>
+    <Compile Include="Forms\OperationalData\Vessels.Designer.cs">
+      <DependentUpon>Vessels.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\OperationalData\WorkingDayCaps.cs">
       <SubType>Form</SubType>
@@ -158,6 +171,8 @@
     <Compile Include="Forms\SignInForm.Designer.cs">
       <DependentUpon>SignInForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\FuelAccounting.cs" />
+    <Compile Include="Models\Logbook.cs" />
     <Compile Include="Models\NavPeriod.cs" />
     <Compile Include="Models\Ship.cs" />
     <Compile Include="Models\Staff.cs" />
@@ -190,11 +205,17 @@
     <EmbeddedResource Include="Forms\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OperationalData\Cash.resx">
+      <DependentUpon>Cash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OperationalData\Fuel.resx">
+      <DependentUpon>Fuel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OperationalData\FuelAccountingForm.resx">
       <DependentUpon>FuelAccountingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OperationalData\WorkingDay.resx">
-      <DependentUpon>WorkingDay.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\OperationalData\Vessels.resx">
+      <DependentUpon>Vessels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OperationalData\WorkingDayCaps.resx">
       <DependentUpon>WorkingDayCaps.cs</DependentUpon>
