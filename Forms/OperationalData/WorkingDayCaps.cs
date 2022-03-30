@@ -144,7 +144,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                 WorkingDayController.delete(вахтенный_журналTableAdapter1, this.demoDataSet.Вахтенный_журнал, Convert.ToInt64(LogbookGridView.SelectedRows[0].Cells[4].Value));
                 checkDate_button_Click(sender, e);
             }
-            else MessageBox.Show("Выберите строку для изменения");
+            else MessageBox.Show("Выберите строку для удаления");
         }
     }
 }
