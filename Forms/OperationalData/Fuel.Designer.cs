@@ -33,7 +33,8 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.FuelGroupBox = new System.Windows.Forms.GroupBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.giveFuelButton = new System.Windows.Forms.Button();
             this.VolumeTextBox = new System.Windows.Forms.TextBox();
@@ -52,10 +53,9 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.label6 = new System.Windows.Forms.Label();
             this.givedVolumetextBox = new System.Windows.Forms.TextBox();
             this.fuelDataGridView = new System.Windows.Forms.DataGridView();
+            this.ФИО_сотрудника = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.driversComboBox = new System.Windows.Forms.ComboBox();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.ФИО_сотрудника = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.объемтопливаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.потраченнаясуммаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataTable2BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -66,7 +66,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.вахтенный_журналTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Вахтенный_журналTableAdapter();
             this.учет_топливаTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Учет_топливаTableAdapter();
             this.dataTable2TableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.DataTable2TableAdapter();
-            this.groupBox2.SuspendLayout();
+            this.FuelGroupBox.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.receiptGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fuelDataGridView)).BeginInit();
@@ -101,23 +101,35 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 2;
             // 
-            // groupBox2
+            // FuelGroupBox
             // 
-            this.groupBox2.Controls.Add(this.deleteButton);
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.receiptGroupBox);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.remainsVolumeTextBox);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.givedVolumetextBox);
-            this.groupBox2.Controls.Add(this.fuelDataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(12, 48);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(530, 335);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Выдача";
+            this.FuelGroupBox.Controls.Add(this.driversComboBox);
+            this.FuelGroupBox.Controls.Add(this.label11);
+            this.FuelGroupBox.Controls.Add(this.deleteButton);
+            this.FuelGroupBox.Controls.Add(this.groupBox3);
+            this.FuelGroupBox.Controls.Add(this.receiptGroupBox);
+            this.FuelGroupBox.Controls.Add(this.button2);
+            this.FuelGroupBox.Controls.Add(this.remainsVolumeTextBox);
+            this.FuelGroupBox.Controls.Add(this.label7);
+            this.FuelGroupBox.Controls.Add(this.label6);
+            this.FuelGroupBox.Controls.Add(this.givedVolumetextBox);
+            this.FuelGroupBox.Controls.Add(this.fuelDataGridView);
+            this.FuelGroupBox.Location = new System.Drawing.Point(12, 48);
+            this.FuelGroupBox.Name = "FuelGroupBox";
+            this.FuelGroupBox.Size = new System.Drawing.Size(530, 346);
+            this.FuelGroupBox.TabIndex = 4;
+            this.FuelGroupBox.TabStop = false;
+            this.FuelGroupBox.Text = "Выдача";
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(444, 263);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(74, 23);
+            this.deleteButton.TabIndex = 15;
+            this.deleteButton.Text = "Удалить";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // groupBox3
             // 
@@ -126,7 +138,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.groupBox3.Controls.Add(this.capsComboBox);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(302, 131);
+            this.groupBox3.Location = new System.Drawing.Point(303, 153);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(222, 104);
             this.groupBox3.TabIndex = 13;
@@ -183,7 +195,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.receiptGroupBox.Controls.Add(this.receiptVolumeTextBox);
             this.receiptGroupBox.Controls.Add(this.label5);
             this.receiptGroupBox.Controls.Add(this.label4);
-            this.receiptGroupBox.Location = new System.Drawing.Point(302, 21);
+            this.receiptGroupBox.Location = new System.Drawing.Point(302, 43);
             this.receiptGroupBox.Name = "receiptGroupBox";
             this.receiptGroupBox.Size = new System.Drawing.Size(222, 104);
             this.receiptGroupBox.TabIndex = 12;
@@ -234,7 +246,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(398, 306);
+            this.button2.Location = new System.Drawing.Point(404, 317);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 23);
             this.button2.TabIndex = 11;
@@ -293,33 +305,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.fuelDataGridView.Size = new System.Drawing.Size(290, 251);
             this.fuelDataGridView.TabIndex = 0;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(193, 32);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(115, 13);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Водитель бензовоза:";
-            // 
-            // driversComboBox
-            // 
-            this.driversComboBox.FormattingEnabled = true;
-            this.driversComboBox.Location = new System.Drawing.Point(314, 29);
-            this.driversComboBox.Name = "driversComboBox";
-            this.driversComboBox.Size = new System.Drawing.Size(141, 21);
-            this.driversComboBox.TabIndex = 17;
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Location = new System.Drawing.Point(449, 247);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteButton.TabIndex = 15;
-            this.deleteButton.Text = "Удалить";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
             // ФИО_сотрудника
             // 
             this.ФИО_сотрудника.DataPropertyName = "ФИО_сотрудника";
@@ -327,6 +312,23 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.ФИО_сотрудника.Name = "ФИО_сотрудника";
             this.ФИО_сотрудника.ReadOnly = true;
             this.ФИО_сотрудника.Width = 106;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(302, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Водитель";
+            // 
+            // driversComboBox
+            // 
+            this.driversComboBox.FormattingEnabled = true;
+            this.driversComboBox.Location = new System.Drawing.Point(363, 16);
+            this.driversComboBox.Name = "driversComboBox";
+            this.driversComboBox.Size = new System.Drawing.Size(155, 21);
+            this.driversComboBox.TabIndex = 17;
             // 
             // объемтопливаDataGridViewTextBoxColumn
             // 
@@ -384,10 +386,8 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 389);
-            this.Controls.Add(this.driversComboBox);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(549, 406);
+            this.Controls.Add(this.FuelGroupBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.menuStrip1);
@@ -398,8 +398,9 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Топливо";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Load += new System.EventHandler(this.Fuel_Load);
+            this.FuelGroupBox.ResumeLayout(false);
+            this.FuelGroupBox.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.receiptGroupBox.ResumeLayout(false);
@@ -419,7 +420,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox FuelGroupBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button giveFuelButton;
         private System.Windows.Forms.TextBox VolumeTextBox;

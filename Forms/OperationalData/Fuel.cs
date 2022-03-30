@@ -87,7 +87,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                         drivers.Find(x => x.getName().Equals(driversComboBox.SelectedItem.ToString())).getId(),
                         cap.getId(), logbook.Find(x => x.getCap() == cap.getId()).getShip(), date));
 
-
                     capsComboBox.Items.Remove(capsComboBox.SelectedItem);
                     if (capsComboBox.Items.Count != 0)
                         capsComboBox.SelectedItem = capsComboBox.Items[0];
@@ -119,7 +118,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                 FuelController.deleteFuel(учет_топливаTableAdapter, this.demoDataSet.Учет_топлива,
                     caps.Find(x => x.getName().Equals(fuelDataGridView.SelectedRows[0].Cells[0].Value.ToString())).getId(),
                     date.Date.ToString());
-                
+
 
                 remains += double.Parse(fuelDataGridView.SelectedRows[0].Cells[1].Value.ToString());
                 capsComboBox.Items.Add(fuelDataGridView.SelectedRows[0].Cells[0].Value.ToString());
@@ -129,9 +128,18 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                 givedVolumetextBox.Text = (double.Parse(receiptVolumeTextBox.Text) - remains).ToString();
                 remainsVolumeTextBox.Text = remains.ToString();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Выберите строку для удаления");
+            }
+        }
+
+        private void Fuel_Load(object sender, EventArgs e)
+        {
+            if (fuelDataGridView.Rows.Count != 0)
+            {
+                MessageBox.Show("В этот день учет топлива проведен. Достпен только просмотр данных.");
+                FuelGroupBox.Enabled = false;
             }
         }
     }
