@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grishkova_vkr_PortApp.Controllers.OperationalData;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,50 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
 {
     public partial class Vessels : Form
     {
+        private bool date = false;
         public Vessels()
         {
             InitializeComponent();
+
         }
 
-        private void Vessels_Load(object sender, EventArgs e)
+        private void Vessels_Load(object sender, EventArgs e) { }
+
+        private void setDateButton_Click(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "demoDataSet.Рейс". При необходимости она может быть перемещена или удалена.
-            this.рейсTableAdapter.Fill(this.demoDataSet.Рейс);
-
+            if (dateTimePicker.Value.Date <= DateTime.Today.Date)
+            {
+                if (CashController.isWorkingDay(dateTimePicker.Value.ToString(), вахтенный_журналTableAdapter1))
+                {
+                    date = true;
+                    CashController.fill(this.vesselsTableAdapter, this.demoDataSet.Vessels, dateTimePicker.Value.Date.ToString());
+                    if (vesselsDataGridView.Rows.Count == 0)
+                    {
+                        MessageBox.Show("В этот день еще не было ни одного рейса. Добавьте новый рейс");
+                        addButton_Click(sender, e);
+                    }else
+                    {
+                        MessageBox.Show("Дата валидная. Доступен просмотр и редактирование.");
+                    }
+                }
+                else MessageBox.Show("Для добавления рейсов в заданный день необходимо заполнить вахтенных журнал");
+            }
+            else MessageBox.Show("Доступно добавление только прошедших рейсов");
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Cash cash = new Cash(dateTimePicker.Value, vesselsDataGridView.Rows.Count!=0);
+            cash.Show();
+            cash.FormClosed += (obj, args) =>
+            {
+                this.Enabled = true;
+                cash = null;
+                CashController.fill(this.vesselsTableAdapter,this.demoDataSet.Vessels, dateTimePicker.Value.Date.ToString());
+            };
+        }
+
+
     }
 }
