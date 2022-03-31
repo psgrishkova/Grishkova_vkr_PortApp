@@ -26,8 +26,8 @@ namespace Grishkova_vkr_PortApp.Controllers.OperationalData
             demoDataSet.КассаDataTable table = adapter.GetDataBy(date);
             if (table.Rows.Count != 0)
             {
-                cash[0] = table.Rows[0].ItemArray[0].ToString();
-                cash[1] = table.Rows[0].ItemArray[1].ToString();
+                cash[0] = table.Rows[0].ItemArray[1].ToString();
+                cash[1] = table.Rows[0].ItemArray[3].ToString();
             }
             return cash;
         }

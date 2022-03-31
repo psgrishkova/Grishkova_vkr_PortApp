@@ -50,7 +50,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.персоналTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.ПерсоналTableAdapter();
             this.прайс_листTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Прайс_листTableAdapter();
             this.saveButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.судноTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.СудноTableAdapter();
             this.маршрутTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.МаршрутTableAdapter();
             this.категория_гражданTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Категория_гражданTableAdapter();
@@ -183,7 +182,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.cashGroupBox.Controls.Add(this.label5);
             this.cashGroupBox.Controls.Add(this.cashierComboBox);
             this.cashGroupBox.Controls.Add(this.label3);
-            this.cashGroupBox.Location = new System.Drawing.Point(283, 27);
+            this.cashGroupBox.Location = new System.Drawing.Point(283, 41);
             this.cashGroupBox.Name = "cashGroupBox";
             this.cashGroupBox.Size = new System.Drawing.Size(184, 73);
             this.cashGroupBox.TabIndex = 6;
@@ -247,15 +246,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(392, 106);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Изменить";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // судноTableAdapter1
             // 
             this.судноTableAdapter1.ClearBeforeFill = true;
@@ -286,7 +276,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 281);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.cashGroupBox);
             this.Controls.Add(this.vesselGroupBox);
@@ -333,7 +322,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         private demoDataSetTableAdapters.ПерсоналTableAdapter персоналTableAdapter1;
         private demoDataSetTableAdapters.Прайс_листTableAdapter прайс_листTableAdapter1;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button button2;
         private demoDataSetTableAdapters.СудноTableAdapter судноTableAdapter1;
         private demoDataSetTableAdapters.МаршрутTableAdapter маршрутTableAdapter1;
         private demoDataSetTableAdapters.Категория_гражданTableAdapter категория_гражданTableAdapter1;

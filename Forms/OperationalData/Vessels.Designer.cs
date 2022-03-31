@@ -44,13 +44,13 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.рейсTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.РейсTableAdapter();
             this.vesselsTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.VesselsTableAdapter();
             this.вахтенный_журналTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Вахтенный_журналTableAdapter();
+            this.прайс_листTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Прайс_листTableAdapter();
             this.Номер_рейса = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Время_рейса = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Название_маршрута = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ФИО_сотрудника = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Название_судна = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Доход_за_рейс = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.прайс_листTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Прайс_листTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.vesselsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vesselsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.demoDataSet1)).BeginInit();
@@ -63,6 +63,8 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             this.vesselsDataGridView.AllowUserToAddRows = false;
             this.vesselsDataGridView.AllowUserToDeleteRows = false;
+            this.vesselsDataGridView.AllowUserToResizeColumns = false;
+            this.vesselsDataGridView.AllowUserToResizeRows = false;
             this.vesselsDataGridView.AutoGenerateColumns = false;
             this.vesselsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vesselsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -74,8 +76,10 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.Доход_за_рейс});
             this.vesselsDataGridView.DataSource = this.vesselsBindingSource;
             this.vesselsDataGridView.Location = new System.Drawing.Point(13, 63);
+            this.vesselsDataGridView.MultiSelect = false;
             this.vesselsDataGridView.Name = "vesselsDataGridView";
             this.vesselsDataGridView.ReadOnly = true;
+            this.vesselsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vesselsDataGridView.Size = new System.Drawing.Size(534, 215);
             this.vesselsDataGridView.TabIndex = 0;
             // 
@@ -161,6 +165,10 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             this.вахтенный_журналTableAdapter1.ClearBeforeFill = true;
             // 
+            // прайс_листTableAdapter1
+            // 
+            this.прайс_листTableAdapter1.ClearBeforeFill = true;
+            // 
             // Номер_рейса
             // 
             this.Номер_рейса.DataPropertyName = "Номер_рейса";
@@ -205,10 +213,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.Доход_за_рейс.Name = "Доход_за_рейс";
             this.Доход_за_рейс.ReadOnly = true;
             this.Доход_за_рейс.Width = 70;
-            // 
-            // прайс_листTableAdapter1
-            // 
-            this.прайс_листTableAdapter1.ClearBeforeFill = true;
             // 
             // Vessels
             // 
@@ -256,12 +260,12 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         private demoDataSetTableAdapters.VesselsTableAdapter vesselsTableAdapter;
         private System.Windows.Forms.ToolStripMenuItem вахтенныйЖурналToolStripMenuItem;
         private demoDataSetTableAdapters.Вахтенный_журналTableAdapter вахтенный_журналTableAdapter1;
+        private demoDataSetTableAdapters.Прайс_листTableAdapter прайс_листTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Номер_рейса;
         private System.Windows.Forms.DataGridViewTextBoxColumn Время_рейса;
         private System.Windows.Forms.DataGridViewTextBoxColumn Название_маршрута;
         private System.Windows.Forms.DataGridViewTextBoxColumn ФИО_сотрудника;
         private System.Windows.Forms.DataGridViewTextBoxColumn Название_судна;
         private System.Windows.Forms.DataGridViewTextBoxColumn Доход_за_рейс;
-        private demoDataSetTableAdapters.Прайс_листTableAdapter прайс_листTableAdapter1;
     }
 }

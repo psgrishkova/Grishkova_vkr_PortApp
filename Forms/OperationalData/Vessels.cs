@@ -29,7 +29,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                 if (CashController.isWorkingDay(dateTimePicker.Value.ToString(), вахтенный_журналTableAdapter1))
                 {
                     date = true;
-                    CashController.fill(this.vesselsTableAdapter, this.demoDataSet.Vessels, dateTimePicker.Value.Date.ToString());
+                    CashController.fill(this.vesselsTableAdapter, this.demoDataSet1.Vessels, dateTimePicker.Value.Date.ToString());
                     if (vesselsDataGridView.Rows.Count == 0)
                     {
                         MessageBox.Show("В этот день еще не было ни одного рейса. Добавьте новый рейс");
@@ -53,7 +53,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             {
                 this.Enabled = true;
                 cash = null;
-                CashController.fill(this.vesselsTableAdapter,this.demoDataSet.Vessels, dateTimePicker.Value.Date.ToString());
+                CashController.fill(this.vesselsTableAdapter,this.demoDataSet1.Vessels, dateTimePicker.Value.Date.ToString());
             };
         }
 
