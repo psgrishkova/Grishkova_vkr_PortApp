@@ -44,17 +44,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             else MessageBox.Show("Доступно добавление только прошедших рейсов");
         }
 
-        private void addButton_Click(object sender, EventArgs e)
-        {
-            this.Enabled = false;
-            Cash cash = new Cash(dateTimePicker.Value, vesselsDataGridView.Rows.Count!=0);
-            cash.Show();
-            cash.FormClosed += (obj, args) =>
-            {
-                this.Enabled = true;
-                cash = null;
-                CashController.fill(this.vesselsTableAdapter,this.demoDataSet1.Vessels, dateTimePicker.Value.Date.ToString());
-            };
         }
 
 
