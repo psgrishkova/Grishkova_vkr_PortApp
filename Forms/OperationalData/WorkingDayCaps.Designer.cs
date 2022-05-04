@@ -46,9 +46,9 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.vesselLabel = new System.Windows.Forms.Label();
             this.vesselComboBox = new System.Windows.Forms.ComboBox();
             this.LogbookGridView = new System.Windows.Forms.DataGridView();
+            this.регистрационныйномерсуднаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ФИО_сотрудника = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Название_судна = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.регистрационныйномерсуднаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.номерзаписиввахтенномжурналеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.капитанDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,7 +83,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.выходToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(485, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(669, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -92,6 +92,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.менюToolStripMenuItem.Text = "Меню";
+            this.менюToolStripMenuItem.Click += new System.EventHandler(this.менюToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -104,6 +105,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // date_label
             // 
@@ -140,7 +142,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.dataGroupBox.Controls.Add(this.addButton);
             this.dataGroupBox.Controls.Add(this.vesselLabel);
             this.dataGroupBox.Controls.Add(this.vesselComboBox);
-            this.dataGroupBox.Location = new System.Drawing.Point(12, 282);
+            this.dataGroupBox.Location = new System.Drawing.Point(112, 282);
             this.dataGroupBox.Name = "dataGroupBox";
             this.dataGroupBox.Size = new System.Drawing.Size(458, 83);
             this.dataGroupBox.TabIndex = 24;
@@ -216,6 +218,8 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.LogbookGridView.AllowUserToAddRows = false;
             this.LogbookGridView.AllowUserToDeleteRows = false;
             this.LogbookGridView.AutoGenerateColumns = false;
+            this.LogbookGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.LogbookGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.LogbookGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LogbookGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.регистрационныйномерсуднаDataGridViewTextBoxColumn,
@@ -231,29 +235,29 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.LogbookGridView.Name = "LogbookGridView";
             this.LogbookGridView.ReadOnly = true;
             this.LogbookGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.LogbookGridView.Size = new System.Drawing.Size(455, 217);
+            this.LogbookGridView.Size = new System.Drawing.Size(642, 217);
             this.LogbookGridView.TabIndex = 25;
+            // 
+            // регистрационныйномерсуднаDataGridViewTextBoxColumn
+            // 
+            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.DataPropertyName = "Регистрационный_номер_судна";
+            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.HeaderText = "Рег. номер судна";
+            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.Name = "регистрационныйномерсуднаDataGridViewTextBoxColumn";
+            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ФИО_сотрудника
             // 
             this.ФИО_сотрудника.DataPropertyName = "ФИО_сотрудника";
-            this.ФИО_сотрудника.HeaderText = "ФИО_сотрудника";
+            this.ФИО_сотрудника.HeaderText = "Капитан";
             this.ФИО_сотрудника.Name = "ФИО_сотрудника";
             this.ФИО_сотрудника.ReadOnly = true;
             // 
             // Название_судна
             // 
             this.Название_судна.DataPropertyName = "Название_судна";
-            this.Название_судна.HeaderText = "Название_судна";
+            this.Название_судна.HeaderText = "Название судна";
             this.Название_судна.Name = "Название_судна";
             this.Название_судна.ReadOnly = true;
-            // 
-            // регистрационныйномерсуднаDataGridViewTextBoxColumn
-            // 
-            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.DataPropertyName = "Регистрационный_номер_судна";
-            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.HeaderText = "Регистрационный_номер_судна";
-            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.Name = "регистрационныйномерсуднаDataGridViewTextBoxColumn";
-            this.регистрационныйномерсуднаDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // датаDataGridViewTextBoxColumn
             // 
@@ -265,7 +269,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // номерзаписиввахтенномжурналеDataGridViewTextBoxColumn
             // 
             this.номерзаписиввахтенномжурналеDataGridViewTextBoxColumn.DataPropertyName = "Номер_записи_в_вахтенном_журнале";
-            this.номерзаписиввахтенномжурналеDataGridViewTextBoxColumn.HeaderText = "Номер_записи_в_вахтенном_журнале";
+            this.номерзаписиввахтенномжурналеDataGridViewTextBoxColumn.HeaderText = "№ записи в вах. жур.";
             this.номерзаписиввахтенномжурналеDataGridViewTextBoxColumn.Name = "номерзаписиввахтенномжурналеDataGridViewTextBoxColumn";
             this.номерзаписиввахтенномжурналеDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -275,13 +279,15 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.капитанDataGridViewTextBoxColumn.HeaderText = "капитан";
             this.капитанDataGridViewTextBoxColumn.Name = "капитанDataGridViewTextBoxColumn";
             this.капитанDataGridViewTextBoxColumn.ReadOnly = true;
+            this.капитанDataGridViewTextBoxColumn.Visible = false;
             // 
             // номернавигационногопериодаDataGridViewTextBoxColumn
             // 
             this.номернавигационногопериодаDataGridViewTextBoxColumn.DataPropertyName = "Номер_навигационного_периода";
-            this.номернавигационногопериодаDataGridViewTextBoxColumn.HeaderText = "Номер_навигационного_периода";
+            this.номернавигационногопериодаDataGridViewTextBoxColumn.HeaderText = "№ нав. пер.";
             this.номернавигационногопериодаDataGridViewTextBoxColumn.Name = "номернавигационногопериодаDataGridViewTextBoxColumn";
             this.номернавигационногопериодаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.номернавигационногопериодаDataGridViewTextBoxColumn.Visible = false;
             // 
             // dataTable1BindingSource
             // 
@@ -340,7 +346,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 368);
+            this.ClientSize = new System.Drawing.Size(669, 368);
             this.Controls.Add(this.LogbookGridView);
             this.Controls.Add(this.dataGroupBox);
             this.Controls.Add(this.checkDate_button);

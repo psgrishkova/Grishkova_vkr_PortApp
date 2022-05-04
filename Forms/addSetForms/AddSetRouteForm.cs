@@ -33,7 +33,6 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
 
         private void setData()
         {
-
             num_textBox.Text = data[1].ToString();
             name_textBox.Text =  (string)data[0];
             start_textBox.Text = (string)data[2];
@@ -54,9 +53,6 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
-                this.Controls.Clear();
-                this.InitializeComponent();
                 if (!action)
                     setData();
 

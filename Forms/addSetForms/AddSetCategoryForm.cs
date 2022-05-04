@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,12 +51,13 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
 
                 this.Close();
             }
+            catch(SqlException)
+            {
+                MessageBox.Show("Данная категория уже используется в формировании прайс-листа, поэтому изменение недоступно");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
-                this.Controls.Clear();
-                this.InitializeComponent();
                 if (!action)
                     setData();
 

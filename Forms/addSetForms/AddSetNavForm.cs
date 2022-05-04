@@ -26,7 +26,7 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
         {
             num_textBox.Text = data[0].ToString();
             startDateTimePicker.Value = (DateTime)data[1];
-            if(!data[2].GetType().Name.Equals("DBNull"))
+            if (!data[2].GetType().Name.Equals("DBNull"))
                 endDateTimePicker.Value = (DateTime)data[2];
         }
 
@@ -45,16 +45,13 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             {
                 if (action)
                     controller.add(new object[] { num_textBox.Text, startDateTimePicker.Value, end });
-                else controller.set(new object[] { num_textBox.Text, startDateTimePicker.Value, end } ,data);
+                else controller.set(new object[] { num_textBox.Text, startDateTimePicker.Value, end }, data);
 
                 this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
-                this.Controls.Clear();
-                this.InitializeComponent();
                 if (!action)
                     setData();
 

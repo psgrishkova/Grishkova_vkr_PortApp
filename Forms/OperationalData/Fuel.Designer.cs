@@ -31,9 +31,14 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.FuelGroupBox = new System.Windows.Forms.GroupBox();
+            this.driversComboBox = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.deleteButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.giveFuelButton = new System.Windows.Forms.Button();
@@ -54,8 +59,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.givedVolumetextBox = new System.Windows.Forms.TextBox();
             this.fuelDataGridView = new System.Windows.Forms.DataGridView();
             this.ФИО_сотрудника = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label11 = new System.Windows.Forms.Label();
-            this.driversComboBox = new System.Windows.Forms.ComboBox();
             this.объемтопливаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.потраченнаясуммаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataTable2BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -66,6 +69,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.вахтенный_журналTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Вахтенный_журналTableAdapter();
             this.учет_топливаTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Учет_топливаTableAdapter();
             this.dataTable2TableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.DataTable2TableAdapter();
+            this.menuStrip1.SuspendLayout();
             this.FuelGroupBox.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.receiptGroupBox.SuspendLayout();
@@ -78,11 +82,35 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.менюToolStripMenuItem,
+            this.справкаToolStripMenuItem,
+            this.выходToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(549, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // менюToolStripMenuItem
+            // 
+            this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
+            this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.менюToolStripMenuItem.Text = "Меню";
+            this.менюToolStripMenuItem.Click += new System.EventHandler(this.менюToolStripMenuItem_Click);
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // dateLabel
             // 
@@ -120,6 +148,23 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.FuelGroupBox.TabIndex = 4;
             this.FuelGroupBox.TabStop = false;
             this.FuelGroupBox.Text = "Выдача";
+            // 
+            // driversComboBox
+            // 
+            this.driversComboBox.FormattingEnabled = true;
+            this.driversComboBox.Location = new System.Drawing.Point(363, 16);
+            this.driversComboBox.Name = "driversComboBox";
+            this.driversComboBox.Size = new System.Drawing.Size(155, 21);
+            this.driversComboBox.TabIndex = 17;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(302, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Водитель";
             // 
             // deleteButton
             // 
@@ -252,6 +297,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.button2.TabIndex = 11;
             this.button2.Text = "Закончить выдачу";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // remainsVolumeTextBox
             // 
@@ -312,23 +358,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.ФИО_сотрудника.Name = "ФИО_сотрудника";
             this.ФИО_сотрудника.ReadOnly = true;
             this.ФИО_сотрудника.Width = 106;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(302, 19);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 13);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Водитель";
-            // 
-            // driversComboBox
-            // 
-            this.driversComboBox.FormattingEnabled = true;
-            this.driversComboBox.Location = new System.Drawing.Point(363, 16);
-            this.driversComboBox.Name = "driversComboBox";
-            this.driversComboBox.Size = new System.Drawing.Size(155, 21);
-            this.driversComboBox.TabIndex = 17;
             // 
             // объемтопливаDataGridViewTextBoxColumn
             // 
@@ -399,6 +428,8 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Топливо";
             this.Load += new System.EventHandler(this.Fuel_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.FuelGroupBox.ResumeLayout(false);
             this.FuelGroupBox.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -453,5 +484,8 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         private System.Windows.Forms.DataGridViewTextBoxColumn ФИО_сотрудника;
         private System.Windows.Forms.DataGridViewTextBoxColumn объемтопливаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn потраченнаясуммаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
     }
 }

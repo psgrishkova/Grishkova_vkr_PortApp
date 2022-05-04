@@ -42,28 +42,41 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.reportProfitTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.ReportProfitTableAdapter();
             this.reportProfitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.demoDataSet1 = new Grishkova_vkr_PortApp.demoDataSet();
+            this.salaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salaryTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.SalaryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportAboutShiftsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportProfitBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.demoDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salaryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(367, 9);
+            this.dateTimePicker1.Location = new System.Drawing.Point(460, 20);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(122, 20);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(624, 9);
+            this.dateTimePicker2.Location = new System.Drawing.Point(677, 20);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(122, 20);
             this.dateTimePicker2.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(788, 9);
+            this.button1.Location = new System.Drawing.Point(840, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 20);
             this.button1.TabIndex = 2;
@@ -74,7 +87,7 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(272, 12);
+            this.label1.Location = new System.Drawing.Point(365, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 3;
@@ -83,7 +96,7 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(535, 12);
+            this.label2.Location = new System.Drawing.Point(588, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 4;
@@ -94,9 +107,9 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(12, 36);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(12, 90);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(936, 673);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(936, 598);
             this.crystalReportViewer1.TabIndex = 5;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -120,8 +133,9 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "График сменности капитанов за указанный период",
-            "Отчет о доходах и расходах в денежном выражении по судам за указанный период"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 9);
+            "Отчет о доходах и расходах в денежном выражении по судам за указанный период",
+            "Отчет о зараотной плате сотрудников за указанный период"});
+            this.comboBox1.Location = new System.Drawing.Point(74, 20);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(246, 21);
             this.comboBox1.TabIndex = 6;
@@ -135,27 +149,102 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             this.reportProfitBindingSource.DataMember = "ReportProfit";
             this.reportProfitBindingSource.DataSource = this.demoDataSet;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.менюToolStripMenuItem,
+            this.справкаToolStripMenuItem,
+            this.выходToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(958, 24);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // менюToolStripMenuItem
+            // 
+            this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
+            this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.менюToolStripMenuItem.Text = "Меню";
+            this.менюToolStripMenuItem.Click += new System.EventHandler(this.менюToolStripMenuItem_Click);
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(13, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(935, 56);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Настройка отчета";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Тип отчета";
+            // 
+            // demoDataSet1
+            // 
+            this.demoDataSet1.DataSetName = "demoDataSet";
+            this.demoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // salaryBindingSource
+            // 
+            this.salaryBindingSource.DataMember = "Salary";
+            this.salaryBindingSource.DataSource = this.demoDataSet1;
+            // 
+            // salaryTableAdapter
+            // 
+            this.salaryTableAdapter.ClearBeforeFill = true;
+            // 
             // SetDatesForReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 721);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(958, 700);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "SetDatesForReport";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SetDatesForReport";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SetDatesForReport_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportAboutShiftsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportProfitBindingSource)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.demoDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salaryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +264,14 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
         private System.Windows.Forms.ComboBox comboBox1;
         private demoDataSetTableAdapters.ReportProfitTableAdapter reportProfitTableAdapter1;
         private System.Windows.Forms.BindingSource reportProfitBindingSource;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private demoDataSet demoDataSet1;
+        private System.Windows.Forms.BindingSource salaryBindingSource;
+        private demoDataSetTableAdapters.SalaryTableAdapter salaryTableAdapter;
     }
 }

@@ -19,7 +19,7 @@ namespace Grishkova_vkr_PortApp.Controllers.ReferenceData
         {
             if((data[0].ToString()).Equals(""))
                 throw new IncorrectDataException();
-            if (adapter.CheckPeriod((((DateTime)data[1]).Date).ToString()) != 0 | (data[2] != null && adapter.CheckPeriod((((DateTime)data[2]).Date).ToString()) != 0))
+            if ((int)adapter.CheckPeriod((((DateTime)data[1]).Date).ToString(), 0) != 0 | (data[2] != null && (int)adapter.CheckPeriod((((DateTime)data[2]).Date).ToString(), 0) != 0))
                 throw new IncorrectDataException("Периоды не могут пересекаться, проверьте правильность введенных данных");
             if (data[2]==null && adapter.CheckNullPeriod() > 0)
                 throw new IncorrectDataException("В базе может быть только один текущий навигационный период. Введите дату завершения периода");
@@ -59,7 +59,7 @@ namespace Grishkova_vkr_PortApp.Controllers.ReferenceData
                 throw new IncorrectDataException("Неверный период. Дата начала не может быть позже даты окончания");
             if (data[2] != null && adapter.CheckNullPeriod() > 0)
                 throw new IncorrectDataException("В базе может быть только один текущий навигационный период. Введите дату завершения периода");
-            if (adapter.CheckPeriod((((DateTime)data[1]).Date).ToString()) != 0 | (data[2] != null && adapter.CheckPeriod((((DateTime)data[2]).Date).ToString()) != 0))
+            if ((int)adapter.CheckPeriod(((DateTime)data[1]).Date.ToString(), long.Parse(data[0].ToString())) != 0 | (data[2] != null && (int)adapter.CheckPeriod(((DateTime)data[2]).Date.ToString(), long.Parse(data[0].ToString())) != 0))
                 throw new IncorrectDataException("Периоды не могут пересекаться, проверьте правильность введенных данных"); //потестить
             DateTime? date = (DateTime?)data[2];
             DateTime? original_date;

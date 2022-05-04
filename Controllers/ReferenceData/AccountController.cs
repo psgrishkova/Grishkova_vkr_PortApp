@@ -39,19 +39,20 @@ namespace Grishkova_vkr_PortApp.Controllers.ReferenceData
 
         public void remove(object[] data)
         {
-            if (((string)data[2]).Equals("Менеджер"))
-                throw new IncorrectDataException("Нельзя удалить учетную запись менеджера");
-            adapter.Delete((string)data[0], (string)data[1], (string)data[2]);
-            fill();
+            throw new CantRemoveAccount();
+            //if (((string)data[2]).Equals("Менеджер"))
+            //    throw new IncorrectDataException("Нельзя удалить учетную запись менеджера");
+            //adapter.Delete((string)data[0], (string)data[1], (string)data[2]);
+            //fill();
         }
 
         public void set(object[] data, object[] original_data)
         {
             if (((string)data[0]).Equals("") | ((string)data[1]).Equals(""))
                 throw new IncorrectDataException();
-            if (!data[2].ToString().Equals(original_data[2].ToString()) | adapter.GetCountAccByRole((string)data[2]) != 0)
+            if (!data[2].ToString().Equals(original_data[2].ToString()) && adapter.GetCountAccByRole((string)data[2]) != 0)
                 throw new IncorrectDataException("В системе предусмотрена только одна учетная запись с данной ролью");
-            if (!((string)data[0]).Equals((string)original_data[0]) | adapter.GetCountAccByLogin((string)data[0]) != 0)
+            if (!((string)data[0]).Equals((string)original_data[0]) && adapter.GetCountAccByLogin((string)data[0]) != 0)
                 throw new IncorrectDataException("Учетная запись с таким логином уже существует");
             adapter.Update((string)data[0], (string)data[1], (string)data[2],
                             (string)original_data[0], (string)original_data[1], (string)original_data[2]);

@@ -10,7 +10,7 @@ namespace Grishkova_vkr_PortApp.Controllers.OperationalData
     {
         public static bool checkPeriod(НавигацияTableAdapter adapter, string date)
         {
-            if (adapter.CheckPeriod(date) != 0)
+            if ((int)adapter.CheckPeriod(date,0) != 0)
                 return true;
             else return false;
         }

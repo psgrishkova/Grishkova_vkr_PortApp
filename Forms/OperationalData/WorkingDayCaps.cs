@@ -3,15 +3,7 @@ using Grishkova_vkr_PortApp.Forms.addSetForms;
 using Grishkova_vkr_PortApp.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Common.CommandTrees.ExpressionBuilder;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.ComboBox;
 
 namespace Grishkova_vkr_PortApp.Forms.OperationalData
 {
@@ -35,26 +27,32 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             }
             else
             {
-                if (dateTimePicker.Value >= DateTime.Now)
+                if (dateTimePicker.Value.Date >= DateTime.Now.Date)
                 {
-
-                    dataGroupBox.Enabled = true;
-                    setCapsShips();
                     fill();
-                    removeCapShip();
-                    if (WorkingDayController.GetLogbookByDate(вахтенный_журналTableAdapter1, dateTimePicker.Value.Date.ToString()) > 0)
+                    if (!Role.role.Equals("Директор"))
                     {
-                        MessageBox.Show("Смена существует. Доступно редактирование");
+                        dataGroupBox.Enabled = true;
+                        setCapsShips();
+                        removeCapShip();
+                        if (WorkingDayController.GetLogbookByDate(вахтенный_журналTableAdapter1, dateTimePicker.Value.Date.ToString()) > 0)
+                        {
+                            MessageBox.Show("Смена создана. Доступно редактирование");
+                        }
                     }
-                    else
-                    {
-
-                    }
+                    else if (WorkingDayController.GetLogbookByDate(вахтенный_журналTableAdapter1, dateTimePicker.Value.Date.ToString()) == 0) MessageBox.Show("В заданный день смена не составлена");
                 }
                 else if (WorkingDayController.GetLogbookByDate(вахтенный_журналTableAdapter1, dateTimePicker.Value.Date.ToString()) > 0)
-                    MessageBox.Show("Заданная смена уже прошла, редактирование недоступно");
-                else MessageBox.Show("Указанный день уже прошел, смену составить нельзя");
-
+                {
+                    fill();
+                    if (!Role.role.Equals("Директор"))
+                        MessageBox.Show("Заданная смена уже прошла, редактирование недоступно");
+                }
+                else
+                {
+                    if (!Role.role.Equals("Директор")) MessageBox.Show("Указанный день уже прошел, смену составить нельзя");
+                    else MessageBox.Show("В заданный день смена не составлена");
+                }
             }
         }
 
@@ -81,12 +79,19 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             NavPeriod nav = WorkingDayController.getNavPeriod(навигацияTableAdapter1, dateTimePicker.Value.Date.ToString());
             if (nav != null)
             {
-                string ship = ships.Find(x => x.getName().Equals(vesselComboBox.SelectedItem.ToString())).getNum();
-                DateTime date = dateTimePicker.Value;
-                long capId = caps.Find(x => x.getName().Equals(nameComboBox.SelectedItem.ToString())).getId();
-                WorkingDayController.addLogbook(вахтенный_журналTableAdapter1, this.demoDataSet.Вахтенный_журнал, навигацияTableAdapter1, ship, date, capId);
-                fill();
-                removeCapShip();
+                try
+                {
+                    string ship = ships.Find(x => x.getName().Equals(vesselComboBox.SelectedItem.ToString())).getNum();
+                    DateTime date = dateTimePicker.Value;
+                    long capId = caps.Find(x => x.getName().Equals(nameComboBox.SelectedItem.ToString())).getId();
+                    WorkingDayController.addLogbook(вахтенный_журналTableAdapter1, this.demoDataSet.Вахтенный_журнал, навигацияTableAdapter1, ship, date, capId);
+                    fill();
+                    removeCapShip();
+                }
+                catch (NullReferenceException)
+                {
+                    MessageBox.Show("Все капитаны или суда уже состоят в смене");
+                }
             }
         }
 
@@ -145,6 +150,20 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                 checkDate_button_Click(sender, e);
             }
             else MessageBox.Show("Выберите строку для удаления");
+        }
+
+        private void менюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
+            this.Close();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Role.authForm.repaint();
+            Role.authForm.Show();
         }
     }
 }

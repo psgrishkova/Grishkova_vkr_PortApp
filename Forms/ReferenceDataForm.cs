@@ -17,6 +17,12 @@ namespace Grishkova_vkr_PortApp.Forms
         public ReferenceDataForm()
         {
             InitializeComponent();
+            if (Role.role.Equals("Директор"))
+            {
+                add_button.Enabled = false;
+                set_button.Enabled = false;
+                delete_button.Enabled = false;
+            }
         }
 
 
@@ -36,7 +42,7 @@ namespace Grishkova_vkr_PortApp.Forms
                     controller.remove(grid.SelectedRows[0].Cells.Cast<DataGridViewCell>().ToList().Select(x => x.Value).ToArray());
                 }
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (System.Data.SqlClient.SqlException)
             {
                 MessageBox.Show("Выбранные данные уже используются в формировании рейса. Прежде, удалите данные о рейсе.");
             }
@@ -205,6 +211,20 @@ namespace Grishkova_vkr_PortApp.Forms
         private void ReferenceDataForm_Load_2(object sender, EventArgs e)
         {
             setDataBySelectedPage(0);
+        }
+
+        private void менюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
+            this.Close();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Role.authForm.repaint();
+            Role.authForm.Show();
         }
     }
 }

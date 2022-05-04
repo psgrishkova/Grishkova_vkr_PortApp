@@ -31,6 +31,11 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             setData();
 
             dataTable2TableAdapter.FillFuelByDay(this.demoDataSet.DataTable2, date.Date.ToString());
+
+            if (Role.role.Equals("Директор"))
+            {
+                FuelGroupBox.Enabled = false;
+            }
         }
 
         private void setData()
@@ -52,7 +57,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                 capsComboBox.Items.Add(cap.getName());
             if (capsComboBox.Items.Count != 0)
                 capsComboBox.SelectedItem = capsComboBox.Items[0];
-
 
         }
 
@@ -82,7 +86,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                 else
                 {
                     remains -= double.Parse(VolumeTextBox.Text);
-                    Staff cap = caps.Find(x => x.getName().Equals(capsComboBox.SelectedItem.ToString()));
+                    Staff cap = caps.Find(x => x.getName().Equals(capsComboBox.SelectedItem.ToString())); //после удаления список не пополнился
                     FuelController.giveFuel(учет_топливаTableAdapter, this.demoDataSet.Учет_топлива, new FuelAccounting(double.Parse(VolumeTextBox.Text), decimal.Parse((cost * double.Parse(VolumeTextBox.Text)).ToString()),
                         drivers.Find(x => x.getName().Equals(driversComboBox.SelectedItem.ToString())).getId(),
                         cap.getId(), logbook.Find(x => x.getCap() == cap.getId()).getShip(), date));
@@ -99,6 +103,8 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                     if (remains == 0 && capsComboBox.Items.Count != 0) MessageBox.Show("Топливо закончилось, но не все капитаны получили топливо на смену. Проверьте данные.");
                     if (capsComboBox.Items.Count == 0 && remains != 0) MessageBox.Show("Все капитаны получили топливо, но оно израсходовано не до конца. Возможна недосдача или неверно введены данные");
                     if (capsComboBox.Items.Count == 0 && remains == 0) MessageBox.Show("Топливо успешно выдно");
+
+                    VolumeTextBox.Text = String.Empty;
                 }
             }
             catch (FormatException ex)
@@ -141,6 +147,32 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                 MessageBox.Show("В этот день учет топлива проведен. Достпен только просмотр данных.");
                 FuelGroupBox.Enabled = false;
             }
+            else if (Role.role.Equals("Директор"))
+            {
+                MessageBox.Show("Учет топлива в этот день не проведен.");
+                button2_Click(sender, e);
+            }
+
+        }
+
+        private void менюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
+            this.Close();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Role.authForm.repaint();
+            Role.authForm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new FuelAccountingForm().Show();
         }
     }
 }

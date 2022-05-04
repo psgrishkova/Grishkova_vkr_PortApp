@@ -1,13 +1,6 @@
 ﻿using Grishkova_vkr_PortApp.Controllers;
 using Grishkova_vkr_PortApp.Controllers.ReferenceData;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grishkova_vkr_PortApp.Forms.addSetForms
@@ -36,7 +29,6 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
         {
             try
             {
-                MessageBox.Show(bday_dateTimePicker.Value.ToShortDateString().Replace('.', '-'));
                 string tel = tel_maskedTextBox.Text.Replace("(", String.Empty).Replace(")", String.Empty);
                 if (action)
                     controller.add(new object[] { name_textBox.Text, tel, bday_dateTimePicker.Value, role_comboBox.SelectedItem });
@@ -47,13 +39,8 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
-                
-                this.Controls.Clear();
-                this.InitializeComponent();
                 if (!action)
                     setData();
-
             }
         }
 

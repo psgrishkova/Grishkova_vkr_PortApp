@@ -1,12 +1,5 @@
 ﻿using Grishkova_vkr_PortApp.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grishkova_vkr_PortApp.Forms.addSetForms
@@ -54,9 +47,6 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
-                this.Controls.Clear();
-                this.InitializeComponent();
                 if (!action)
                     setData();
 

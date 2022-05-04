@@ -18,6 +18,11 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         {
             InitializeComponent();
 
+            if (Role.role.Equals("Директор"))
+            {
+                addButton.Enabled = false;
+            }
+
         }
 
         private void Vessels_Load(object sender, EventArgs e) { }
@@ -34,7 +39,8 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                     {
                         MessageBox.Show("В этот день еще не было ни одного рейса. Добавьте новый рейс");
                         addButton_Click(sender, e);
-                    }else
+                    }
+                    else
                     {
                         MessageBox.Show("Дата валидная. Доступен просмотр и редактирование.");
                     }
@@ -47,16 +53,28 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         private void addButton_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            Cash cash = new Cash(dateTimePicker.Value, vesselsDataGridView.Rows.Count!=0);
+            Cash cash = new Cash(dateTimePicker.Value, vesselsDataGridView.Rows.Count != 0);
             cash.Show();
             cash.FormClosed += (obj, args) =>
             {
                 this.Enabled = true;
                 cash = null;
-                CashController.fill(this.vesselsTableAdapter,this.demoDataSet1.Vessels, dateTimePicker.Value.Date.ToString());
+                CashController.fill(this.vesselsTableAdapter, this.demoDataSet1.Vessels, dateTimePicker.Value.Date.ToString());
             };
         }
 
+        private void менюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
+            this.Close();
+        }
 
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Role.authForm.repaint();
+            Role.authForm.Show();
+        }
     }
 }

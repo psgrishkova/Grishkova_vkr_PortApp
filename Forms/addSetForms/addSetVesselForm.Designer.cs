@@ -81,11 +81,11 @@ namespace Grishkova_vkr_PortApp.Forms.addForms
             // dateTimePicker
             // 
             this.dateTimePicker.Location = new System.Drawing.Point(127, 47);
-            this.dateTimePicker.MaxDate = new System.DateTime(2022, 2, 2, 0, 0, 0, 0);
+            this.dateTimePicker.MaxDate = new System.DateTime(2110, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(126, 20);
             this.dateTimePicker.TabIndex = 4;
-            this.dateTimePicker.Value = new System.DateTime(2022, 2, 2, 0, 0, 0, 0);
+            this.dateTimePicker.Value = new System.DateTime(2022, 4, 15, 0, 0, 0, 0);
             // 
             // name_textBox
             // 

@@ -79,5 +79,19 @@ namespace Grishkova_vkr_PortApp.Forms
         {
 
         }
+
+        private void менюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
+            this.Close();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Role.authForm.repaint();
+            Role.authForm.Show();
+        }
     }
 }

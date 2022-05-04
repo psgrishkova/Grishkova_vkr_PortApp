@@ -41,5 +41,12 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                 f.Show();
             }
         }
+
+        private void менюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
+            this.Close();
+        }
     }
 }

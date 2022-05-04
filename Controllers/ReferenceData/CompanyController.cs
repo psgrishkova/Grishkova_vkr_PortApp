@@ -9,6 +9,7 @@ namespace Grishkova_vkr_PortApp.Controllers.ReferenceData
 {
     class CompanyController : CRUDController
     {
+
         private demoDataSetTableAdapters.КомпанияTableAdapter adapter;
         private demoDataSet.КомпанияDataTable table;
 
@@ -37,7 +38,7 @@ namespace Grishkova_vkr_PortApp.Controllers.ReferenceData
 
         public void remove(object[] data)
         {
-            adapter.Delete((string)data[0], (string)data[1], Convert.ToInt64(data[2]), (string)data[3], (string)data[4], (long)data[5]);
+            adapter.DeleteQuery((string)data[0], (string)data[1], Convert.ToInt64(data[2]), (string)data[3], (string)data[4]);
             fill();
         }
 
@@ -47,8 +48,8 @@ namespace Grishkova_vkr_PortApp.Controllers.ReferenceData
                 throw new IncorrectDataException();
             if (!data[0].ToString().Equals(original_data[0].ToString()) && adapter.GetCountOfCompByName((string)data[0]) != 0)
                 throw new IncorrectDataException("Компания с таким названием уже существует");
-            adapter.Update((string)data[0], (string)data[1], Convert.ToInt64(data[2]), (string)data[3], (string)data[4], 
-                            (string)data[0], (string)data[1], Convert.ToInt64(data[2]), (string)data[3], (string)data[4], (long)data[5]);
+            adapter.UpdateQuery((string)data[0], (string)data[1], Convert.ToInt64(data[2]), (string)data[3], (string)data[4], 
+                            (string)original_data[0], (string)original_data[1], Convert.ToInt64(original_data[2]), (string)original_data[3], (string)original_data[4]);
             fill();
         }
     }

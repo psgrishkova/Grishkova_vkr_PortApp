@@ -103,7 +103,7 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             this.Controls.Add(this.vesselLabel);
             this.Controls.Add(this.vesselComboBox);
             this.Name = "UpdateLogbook";
-            this.Text = "UpdateLogbook";
+            this.Text = "Обновить";
             this.ResumeLayout(false);
             this.PerformLayout();
 

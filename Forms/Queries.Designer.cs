@@ -48,7 +48,11 @@ namespace Grishkova_vkr_PortApp.Forms
             this.countPassByDayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.countPassByDayTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.CountPassByDayTableAdapter();
             this.calendarToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCountRoutesBindingSource)).BeginInit();
@@ -63,7 +67,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.queryComboBox);
             this.groupBox1.Controls.Add(this.monthCalendar1);
-            this.groupBox1.Location = new System.Drawing.Point(228, 27);
+            this.groupBox1.Location = new System.Drawing.Point(315, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(190, 268);
             this.groupBox1.TabIndex = 0;
@@ -112,9 +116,13 @@ namespace Grishkova_vkr_PortApp.Forms
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.менюToolStripMenuItem,
+            this.справкаToolStripMenuItem,
+            this.выходToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(432, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(517, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -131,12 +139,12 @@ namespace Grishkova_vkr_PortApp.Forms
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(208, 304);
+            this.dataGridView.Size = new System.Drawing.Size(296, 304);
             this.dataGridView.TabIndex = 2;
             // 
             // showButton
             // 
-            this.showButton.Location = new System.Drawing.Point(343, 306);
+            this.showButton.Location = new System.Drawing.Point(430, 306);
             this.showButton.Name = "showButton";
             this.showButton.Size = new System.Drawing.Size(75, 23);
             this.showButton.TabIndex = 6;
@@ -194,11 +202,31 @@ namespace Grishkova_vkr_PortApp.Forms
             this.calendarToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.calendarToolTip.ToolTipTitle = "Выбор периода";
             // 
+            // менюToolStripMenuItem
+            // 
+            this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
+            this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.менюToolStripMenuItem.Text = "Меню";
+            this.менюToolStripMenuItem.Click += new System.EventHandler(this.менюToolStripMenuItem_Click);
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            // 
             // Queries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 341);
+            this.ClientSize = new System.Drawing.Size(517, 341);
             this.Controls.Add(this.showButton);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.groupBox1);
@@ -209,6 +237,8 @@ namespace Grishkova_vkr_PortApp.Forms
             this.Load += new System.EventHandler(this.Queries_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCountRoutesBindingSource)).EndInit();
@@ -240,5 +270,8 @@ namespace Grishkova_vkr_PortApp.Forms
         private System.Windows.Forms.BindingSource countPassByDayBindingSource;
         private demoDataSetTableAdapters.CountPassByDayTableAdapter countPassByDayTableAdapter;
         private System.Windows.Forms.ToolTip calendarToolTip;
+        private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
     }
 }

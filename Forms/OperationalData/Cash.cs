@@ -92,26 +92,33 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         private void saveButton_Click(object sender, EventArgs e)
         {
             Ship ship = ships.Find(x => x.getName().Equals(shipsComboBox.SelectedItem.ToString()));
-            long cap = long.Parse(вахтенный_журналTableAdapter1.GetDataByDateShip(date.Date.ToString(), ship.getNum()).Rows[0].ItemArray[3].ToString());
-
-            long cashier = cashiers.Find(x => x.getName().Equals(cashierComboBox.SelectedItem.ToString())).getId();
-            Vessel v = new Vessel(date, TimeSpan.Parse(timePicker.Value.ToShortTimeString()), long.Parse(рейсTableAdapter1.GetCountVesselsByDay(date.Date.ToString()).ToString()) + 1,
-                cap, ship.getNum(), routes.Find(x => x.Name.Equals(routeComboBox.SelectedItem.ToString())).Id, getProfit());
-
-            List<TicketOffice> tickets = new List<TicketOffice>();
-            foreach (DataGridViewRow row in passDataGridView.Rows)
+            int passCount = passDataGridView.Rows.Cast<DataGridViewRow>().ToList().Sum(x => Int32.Parse(x.Cells[1].Value.ToString()));
+            if (ship.getCapacity() < passCount) MessageBox.Show("Вместимость выбранного судна меньше количества пассажиров. Выберите другое судно или разделить пассажиров на два рейса");
+            else if (passCount < 1) MessageBox.Show("Судно не может совершать рейс пустым");
+            else
             {
-                if (priceList.Find(x => x.Category.Equals(row.Cells[0].Value.ToString())) != null)
-                    tickets.Add(new TicketOffice(v.Date, v.Time, v.Cap, v.Ship, v.Route, v.Id, long.Parse(priceComboBox.SelectedItem.ToString()),
-                        row.Cells[0].Value.ToString(), int.Parse(row.Cells[1].Value.ToString()), cashier));
-            }
+                long cap = long.Parse(вахтенный_журналTableAdapter1.GetDataByDateShip(date.Date.ToString(), ship.getNum()).Rows[0].ItemArray[3].ToString());
 
-            try
-            {
-                CashController.add(рейсTableAdapter1, this.demoDataSet1.Рейс, demoDataSet1.Касса, кассаTableAdapter1, v, tickets);
-                MessageBox.Show("Рейс сохранен");
+                long cashier = cashiers.Find(x => x.getName().Equals(cashierComboBox.SelectedItem.ToString())).getId();
+                Vessel v = new Vessel(date, TimeSpan.Parse(timePicker.Value.ToShortTimeString()), long.Parse(рейсTableAdapter1.GetCountVesselsByDay(date.Date.ToString()).ToString()) + 1,
+                    cap, ship.getNum(), routes.Find(x => x.Name.Equals(routeComboBox.SelectedItem.ToString())).Id, getProfit());
+
+                List<TicketOffice> tickets = new List<TicketOffice>();
+                foreach (DataGridViewRow row in passDataGridView.Rows)
+                {
+                    if (priceList.Find(x => x.Category.Equals(row.Cells[0].Value.ToString())) != null)
+                        tickets.Add(new TicketOffice(v.Date, v.Time, v.Cap, v.Ship, v.Route, v.Id, long.Parse(priceComboBox.SelectedItem.ToString()),
+                            row.Cells[0].Value.ToString(), int.Parse(row.Cells[1].Value.ToString()), cashier));
+                }
+
+                try
+                {
+
+                    CashController.add(рейсTableAdapter1, this.demoDataSet1.Рейс, demoDataSet1.Касса, кассаTableAdapter1, v, tickets);
+                    MessageBox.Show("Рейс сохранен");
+                }
+                catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Выбранное судно уже совершает рейс в этой время"); }
             }
-            catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Выбранное судно уже совершает рейс в этой время"); }
         }
 
         private decimal getProfit()
@@ -148,6 +155,20 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         private void routeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             setGrid();
+        }
+
+        private void менюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
+            this.Close();
+        }
+
+        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Role.authForm.repaint();
+            Role.authForm.Show();
         }
     }
 }

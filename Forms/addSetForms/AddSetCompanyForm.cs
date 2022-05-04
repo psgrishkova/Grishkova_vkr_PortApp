@@ -26,7 +26,7 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
         {
             name_textBox.Text = (string)data[0];
             inn_textBox.Text = (string)data[1];
-            tel_textBox.Text = (string)data[2];
+            tel_textBox.Text =  data[2].ToString();
             legalAdress_textBox.Text = (string)data[3];
             physicalAddress_textBox.Text = (string)data[4];
         }
@@ -44,9 +44,6 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
-                this.Controls.Clear();
-                this.InitializeComponent();
                 if (!action)
                     setData();
 

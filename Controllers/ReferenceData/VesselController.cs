@@ -36,7 +36,7 @@ namespace Grishkova_vkr_PortApp.Controllers.ReferenceData
 
         public void remove(object[] data)
         {
-                adapter.Delete((string)data[0], (DateTime)data[1], (string)data[2], (string)data[3], Convert.ToInt32(data[4]), companyId);
+                adapter.Delete((string)data[0], (DateTime)data[4], (string)data[1], (string)data[2], Convert.ToInt32(data[3]), companyId);
                 fill();
         }
 
@@ -46,10 +46,10 @@ namespace Grishkova_vkr_PortApp.Controllers.ReferenceData
                 throw new IncorrectDataException();
             if (!((string)data[0]).Equals((string)original_data[0]) && Convert.ToInt32(adapter.GetVesselCountByNum((string)data[0])) != 0)
                 throw new IncorrectDataException("Судно с таким регистрационным номером уже существует");
-            if (!((string)data[2]).Equals((string)original_data[2]) && Convert.ToInt32(adapter.GetVesselCountByName((string)data[2])) != 0)
+            if (!((string)data[2]).Equals((string)original_data[1]) && Convert.ToInt32(adapter.GetVesselCountByName((string)data[2])) != 0)
                 throw new IncorrectDataException("Судно с таким названием уже существует");
             adapter.Update((string)data[0], (DateTime)data[1], (string)data[2], (string)data[3], Convert.ToInt32(data[4]), companyId,
-                            (string)original_data[0], (DateTime)original_data[1], (string)original_data[2], (string)original_data[3], Convert.ToInt32(original_data[4]), companyId);
+                            (string)original_data[0], (DateTime)original_data[4], (string)original_data[1], (string)original_data[2], Convert.ToInt32(original_data[3]), companyId);
             fill();
         }
     }
