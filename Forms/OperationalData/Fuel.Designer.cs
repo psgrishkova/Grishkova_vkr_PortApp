@@ -155,7 +155,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.driversComboBox.Location = new System.Drawing.Point(363, 16);
             this.driversComboBox.Name = "driversComboBox";
             this.driversComboBox.Size = new System.Drawing.Size(155, 21);
-            this.driversComboBox.TabIndex = 17;
+            this.driversComboBox.TabIndex = 0;
             // 
             // label11
             // 
@@ -171,7 +171,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.deleteButton.Location = new System.Drawing.Point(444, 263);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(74, 23);
-            this.deleteButton.TabIndex = 15;
+            this.deleteButton.TabIndex = 7;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
@@ -195,7 +195,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.giveFuelButton.Location = new System.Drawing.Point(141, 72);
             this.giveFuelButton.Name = "giveFuelButton";
             this.giveFuelButton.Size = new System.Drawing.Size(75, 23);
-            this.giveFuelButton.TabIndex = 16;
+            this.giveFuelButton.TabIndex = 6;
             this.giveFuelButton.Text = "Выдать";
             this.giveFuelButton.UseVisualStyleBackColor = true;
             this.giveFuelButton.Click += new System.EventHandler(this.giveFuelButton_Click);
@@ -205,7 +205,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.VolumeTextBox.Location = new System.Drawing.Point(69, 46);
             this.VolumeTextBox.Name = "VolumeTextBox";
             this.VolumeTextBox.Size = new System.Drawing.Size(141, 20);
-            this.VolumeTextBox.TabIndex = 15;
+            this.VolumeTextBox.TabIndex = 5;
             // 
             // capsComboBox
             // 
@@ -213,7 +213,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.capsComboBox.Location = new System.Drawing.Point(69, 19);
             this.capsComboBox.Name = "capsComboBox";
             this.capsComboBox.Size = new System.Drawing.Size(141, 21);
-            this.capsComboBox.TabIndex = 14;
+            this.capsComboBox.TabIndex = 4;
             // 
             // label9
             // 
@@ -252,7 +252,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.saveReceiptButton.Location = new System.Drawing.Point(141, 75);
             this.saveReceiptButton.Name = "saveReceiptButton";
             this.saveReceiptButton.Size = new System.Drawing.Size(75, 23);
-            this.saveReceiptButton.TabIndex = 17;
+            this.saveReceiptButton.TabIndex = 3;
             this.saveReceiptButton.Text = "Сохранить";
             this.saveReceiptButton.UseVisualStyleBackColor = true;
             this.saveReceiptButton.Click += new System.EventHandler(this.saveReceiptButton_Click);
@@ -262,14 +262,14 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.receiptSumTextBox.Location = new System.Drawing.Point(116, 43);
             this.receiptSumTextBox.Name = "receiptSumTextBox";
             this.receiptSumTextBox.Size = new System.Drawing.Size(100, 20);
-            this.receiptSumTextBox.TabIndex = 5;
+            this.receiptSumTextBox.TabIndex = 2;
             // 
             // receiptVolumeTextBox
             // 
             this.receiptVolumeTextBox.Location = new System.Drawing.Point(116, 16);
             this.receiptVolumeTextBox.Name = "receiptVolumeTextBox";
             this.receiptVolumeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.receiptVolumeTextBox.TabIndex = 4;
+            this.receiptVolumeTextBox.TabIndex = 1;
             // 
             // label5
             // 
@@ -294,7 +294,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.button2.Location = new System.Drawing.Point(404, 317);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 23);
-            this.button2.TabIndex = 11;
+            this.button2.TabIndex = 8;
             this.button2.Text = "Закончить выдачу";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -427,6 +427,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Топливо";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Fuel_FormClosed);
             this.Load += new System.EventHandler(this.Fuel_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -269,7 +269,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // номерзаписиввахтенномжурналеDataGridViewTextBoxColumn
             // 
             this.номерзаписиввахтенномжурналеDataGridViewTextBoxColumn.DataPropertyName = "Номер_записи_в_вахтенном_журнале";
-            this.номерзаписиввахтенномжурналеDataGridViewTextBoxColumn.HeaderText = "№ записи в вах. жур.";
+            this.номерзаписиввахтенномжурналеDataGridViewTextBoxColumn.HeaderText = "№ записи в вах. журнале";
             this.номерзаписиввахтенномжурналеDataGridViewTextBoxColumn.Name = "номерзаписиввахтенномжурналеDataGridViewTextBoxColumn";
             this.номерзаписиввахтенномжурналеDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -358,7 +358,9 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.MaximizeBox = false;
             this.Name = "WorkingDayCaps";
             this.ShowIcon = false;
-            this.Text = "Вахтенный журнал";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Составление смены";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WorkingDayCaps_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.dataGroupBox.ResumeLayout(false);

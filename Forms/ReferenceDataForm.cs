@@ -1,4 +1,5 @@
 ﻿using Grishkova_vkr_PortApp.Controllers;
+using Grishkova_vkr_PortApp.Controllers.OperationalData;
 using Grishkova_vkr_PortApp.Controllers.ReferenceData;
 using Grishkova_vkr_PortApp.Forms.addForms;
 using Grishkova_vkr_PortApp.Forms.addSetForms;
@@ -54,12 +55,16 @@ namespace Grishkova_vkr_PortApp.Forms
 
         private void set_button_Click(object sender, EventArgs e)
         {
-            if (grid.SelectedRows.Count == 0)
-                MessageBox.Show("Выберите строку для изменения");
-            else
+            if (referenceData_tabControl.SelectedIndex != 7)
             {
-                openAddSetForm(referenceData_tabControl.SelectedIndex, grid.SelectedRows[0].Cells.Cast<DataGridViewCell>().ToList().Select(x => x.Value).ToArray());
+                if (grid.SelectedRows.Count == 0)
+                    MessageBox.Show("Выберите строку для изменения");
+                else
+                {
+                    openAddSetForm(referenceData_tabControl.SelectedIndex, grid.SelectedRows[0].Cells.Cast<DataGridViewCell>().ToList().Select(x => x.Value).ToArray());
+                }
             }
+            else MessageBox.Show("Прайс-листы редактировать нельзя.");
         }
 
         private void referenceData_tabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,6 +96,9 @@ namespace Grishkova_vkr_PortApp.Forms
                     break;
                 case 6:
                     controller = new StaffController(this.персоналTableAdapter, this.demoDataSet.Персонал);
+                    break;
+                case 7:
+                    controller = new PriceListController(this.прайс_листTableAdapter, this.demoDataSet.Прайс_лист);
                     break;
             }
             grid = (DataGridView)referenceData_tabControl.SelectedTab.Controls[0];
@@ -133,6 +141,9 @@ namespace Grishkova_vkr_PortApp.Forms
                 case 6:
                     addSetForm = new AddSetStaffForm(controller, data);
                     break;
+                case 7:
+                    addSetForm = new AddSetPrice(controller, data);
+                    break;
             }
             addSetForm.Show();
             if (addSetForm != null)
@@ -174,6 +185,9 @@ namespace Grishkova_vkr_PortApp.Forms
                     case 6:
                         персоналBindingSource.Filter = filter;
                         break;
+                    case 7:
+                        прайслистBindingSource1.Filter = filter;
+                        break;
                 }
             }
             else MessageBox.Show("Введите данные для поиска");
@@ -205,11 +219,16 @@ namespace Grishkova_vkr_PortApp.Forms
                 case 6:
                     персоналBindingSource.RemoveFilter();
                     break;
+                case 7:
+                    прайслистBindingSource1.RemoveFilter();
+                    break;
             }
         }
 
         private void ReferenceDataForm_Load_2(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "demoDataSet.Прайс_лист". При необходимости она может быть перемещена или удалена.
+            this.прайс_листTableAdapter.Fill(this.demoDataSet.Прайс_лист);
             setDataBySelectedPage(0);
         }
 
@@ -225,6 +244,12 @@ namespace Grishkova_vkr_PortApp.Forms
             this.Close();
             Role.authForm.repaint();
             Role.authForm.Show();
+        }
+
+        private void ReferenceDataForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
         }
     }
 }

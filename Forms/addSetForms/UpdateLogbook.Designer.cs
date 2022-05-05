@@ -102,7 +102,11 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             this.Controls.Add(this.name_label);
             this.Controls.Add(this.vesselLabel);
             this.Controls.Add(this.vesselComboBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "UpdateLogbook";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Обновить";
             this.ResumeLayout(false);
             this.PerformLayout();

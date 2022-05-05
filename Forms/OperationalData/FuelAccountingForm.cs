@@ -48,5 +48,11 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             Role.menu.Show();
             this.Close();
         }
+
+        private void FuelAccountingForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
+        }
     }
 }

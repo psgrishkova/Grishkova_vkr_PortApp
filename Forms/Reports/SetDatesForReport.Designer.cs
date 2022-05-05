@@ -36,26 +36,27 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.demoDataSet = new Grishkova_vkr_PortApp.demoDataSet();
-            this.reportAboutShiftsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportAboutShiftsTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.ReportAboutShiftsTableAdapter();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.reportProfitTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.ReportProfitTableAdapter();
-            this.reportProfitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.demoDataSet = new Grishkova_vkr_PortApp.demoDataSet();
+            this.reportAboutShiftsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportAboutShiftsTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.ReportAboutShiftsTableAdapter();
+            this.reportProfitTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.ReportProfitTableAdapter();
+            this.reportProfitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.demoDataSet1 = new Grishkova_vkr_PortApp.demoDataSet();
             this.salaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.salaryTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.SalaryTableAdapter();
+            this.staffCashTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.StaffCashTableAdapter();
+            this.staffSalaryTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.StaffSalaryTableAdapter();
+            this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportAboutShiftsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportProfitBindingSource)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.demoDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salaryBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -109,23 +110,11 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Location = new System.Drawing.Point(12, 90);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ShowGroupTreeButton = false;
+            this.crystalReportViewer1.ShowParameterPanelButton = false;
             this.crystalReportViewer1.Size = new System.Drawing.Size(936, 598);
             this.crystalReportViewer1.TabIndex = 5;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            // 
-            // demoDataSet
-            // 
-            this.demoDataSet.DataSetName = "demoDataSet";
-            this.demoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reportAboutShiftsBindingSource
-            // 
-            this.reportAboutShiftsBindingSource.DataMember = "ReportAboutShifts";
-            this.reportAboutShiftsBindingSource.DataSource = this.demoDataSet;
-            // 
-            // reportAboutShiftsTableAdapter
-            // 
-            this.reportAboutShiftsTableAdapter.ClearBeforeFill = true;
             // 
             // comboBox1
             // 
@@ -134,20 +123,11 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             this.comboBox1.Items.AddRange(new object[] {
             "График сменности капитанов за указанный период",
             "Отчет о доходах и расходах в денежном выражении по судам за указанный период",
-            "Отчет о зараотной плате сотрудников за указанный период"});
+            "Отчет о заработной плате сотрудников за указанный период"});
             this.comboBox1.Location = new System.Drawing.Point(74, 20);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(246, 21);
             this.comboBox1.TabIndex = 6;
-            // 
-            // reportProfitTableAdapter1
-            // 
-            this.reportProfitTableAdapter1.ClearBeforeFill = true;
-            // 
-            // reportProfitBindingSource
-            // 
-            this.reportProfitBindingSource.DataMember = "ReportProfit";
-            this.reportProfitBindingSource.DataSource = this.demoDataSet;
             // 
             // menuStrip1
             // 
@@ -206,6 +186,29 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             this.label3.TabIndex = 7;
             this.label3.Text = "Тип отчета";
             // 
+            // demoDataSet
+            // 
+            this.demoDataSet.DataSetName = "demoDataSet";
+            this.demoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportAboutShiftsBindingSource
+            // 
+            this.reportAboutShiftsBindingSource.DataMember = "ReportAboutShifts";
+            this.reportAboutShiftsBindingSource.DataSource = this.demoDataSet;
+            // 
+            // reportAboutShiftsTableAdapter
+            // 
+            this.reportAboutShiftsTableAdapter.ClearBeforeFill = true;
+            // 
+            // reportProfitTableAdapter1
+            // 
+            this.reportProfitTableAdapter1.ClearBeforeFill = true;
+            // 
+            // reportProfitBindingSource
+            // 
+            this.reportProfitBindingSource.DataMember = "ReportProfit";
+            this.reportProfitBindingSource.DataSource = this.demoDataSet;
+            // 
             // demoDataSet1
             // 
             this.demoDataSet1.DataSetName = "demoDataSet";
@@ -216,9 +219,13 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             this.salaryBindingSource.DataMember = "Salary";
             this.salaryBindingSource.DataSource = this.demoDataSet1;
             // 
-            // salaryTableAdapter
+            // staffCashTableAdapter1
             // 
-            this.salaryTableAdapter.ClearBeforeFill = true;
+            this.staffCashTableAdapter1.ClearBeforeFill = true;
+            // 
+            // staffSalaryTableAdapter1
+            // 
+            this.staffSalaryTableAdapter1.ClearBeforeFill = true;
             // 
             // SetDatesForReport
             // 
@@ -234,15 +241,15 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
             this.Name = "SetDatesForReport";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SetDatesForReport";
+            this.Text = "Работа с отчетами";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SetDatesForReport_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportAboutShiftsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportProfitBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.demoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportAboutShiftsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportProfitBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.demoDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salaryBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -272,6 +279,7 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
         private System.Windows.Forms.Label label3;
         private demoDataSet demoDataSet1;
         private System.Windows.Forms.BindingSource salaryBindingSource;
-        private demoDataSetTableAdapters.SalaryTableAdapter salaryTableAdapter;
+        private demoDataSetTableAdapters.StaffCashTableAdapter staffCashTableAdapter1;
+        private demoDataSetTableAdapters.StaffSalaryTableAdapter staffSalaryTableAdapter1;
     }
 }

@@ -12,6 +12,10 @@
 
 namespace Grishkova_vkr_PortApp.demoDataSetTableAdapters
 {
+    partial class StaffCashTableAdapter
+    {
+    }
+
     partial class ReportAboutShiftsTableAdapter
     {
     }

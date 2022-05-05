@@ -33,8 +33,8 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
                 }else if (comboBox1.SelectedIndex == 2)
                 {
                     report = new CrystalReport3();
-                    salaryTableAdapter.FillSalary(this.demoDataSet.Salary, dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString());
-                    report.SetDataSource((DataTable)demoDataSet.Salary);
+                    staffSalaryTableAdapter1.Fill(this.demoDataSet.StaffSalary, dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
+                    report.SetDataSource((DataTable)demoDataSet.StaffSalary);
                 }
 
                 if (report != null)
@@ -64,7 +64,8 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
 
         private void SetDatesForReport_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            Role.menu.repaint();
+            Role.menu.Show();
         }
     }
 }

@@ -30,17 +30,13 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             try
             {
                 string tel = tel_maskedTextBox.Text.Replace("(", String.Empty).Replace(")", String.Empty);
-                if (action)
-                    controller.add(new object[] { name_textBox.Text, tel, bday_dateTimePicker.Value, role_comboBox.SelectedItem });
-                else controller.set(new object[] { name_textBox.Text, tel, bday_dateTimePicker.Value.ToShortDateString().Replace('.','-') }, data);
+                controller.add(new object[] { name_textBox.Text, tel, bday_dateTimePicker.Value, role_comboBox.SelectedItem });
 
                 this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                if (!action)
-                    setData();
             }
         }
 

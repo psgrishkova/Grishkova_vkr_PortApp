@@ -1,12 +1,5 @@
 ﻿using Grishkova_vkr_PortApp.Controllers.OperationalData;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grishkova_vkr_PortApp.Forms.OperationalData
@@ -37,17 +30,29 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
                     CashController.fill(this.vesselsTableAdapter, this.demoDataSet1.Vessels, dateTimePicker.Value.Date.ToString());
                     if (vesselsDataGridView.Rows.Count == 0)
                     {
-                        MessageBox.Show("В этот день еще не было ни одного рейса. Добавьте новый рейс");
-                        addButton_Click(sender, e);
+                        if (Role.role.Equals("Директор")) MessageBox.Show("В этот день не было ни одного рейса. Выберите другую дату.");
+                        else
+                        {
+                            MessageBox.Show("В этот день еще не было ни одного рейса. Добавьте новый рейс.");
+                            addButton_Click(sender, e);
+                        }
                     }
-                    else
+                    else if (!Role.role.Equals("Директор"))
                     {
                         MessageBox.Show("Дата валидная. Доступен просмотр и редактирование.");
                     }
                 }
-                else MessageBox.Show("Для добавления рейсов в заданный день необходимо заполнить вахтенных журнал");
+                else if (!Role.role.Equals("Директор")) MessageBox.Show("Для добавления рейсов в заданный день необходимо создать смену.");
+                else MessageBox.Show("В этот день не было ни одного рейса. Выберите другую дату.");
             }
-            else MessageBox.Show("Доступно добавление только прошедших рейсов");
+            else
+            {
+                try { vesselsDataGridView.Rows.Clear(); } catch (System.ArgumentException) { }
+                
+                if (!Role.role.Equals("Директор")) MessageBox.Show("Доступно добавление только прошедших рейсов.");
+                else MessageBox.Show("Дата некорректная. Попробуйте выбрать другую дату.");
+            }
+
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -75,6 +80,12 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.Close();
             Role.authForm.repaint();
             Role.authForm.Show();
+        }
+
+        private void Vessels_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
         }
     }
 }

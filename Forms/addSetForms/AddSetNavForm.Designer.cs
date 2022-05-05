@@ -125,6 +125,7 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             this.MaximizeBox = false;
             this.Name = "AddSetNavForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Навигационный период";
             this.ResumeLayout(false);
             this.PerformLayout();

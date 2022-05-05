@@ -37,15 +37,22 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
 
             if (b)
             {
-                string[] cash = CashController.getCash(this.кассаTableAdapter1, date.Date.ToString());
-                cashierComboBox.Items.Add(cashiers.Find(x => x.getId() == long.Parse(cash[1])).getName());
-                cashierComboBox.SelectedItem = cashierComboBox.Items[0];
-                priceComboBox.Items.Add(cash[0]);
-                priceComboBox.SelectedItem = cash[0];
+                try
+                {
+                    string[] cash = CashController.getCash(this.кассаTableAdapter1, date.Date.ToString());
+                    cashierComboBox.Items.Add(cashiers.Find(x => x.getId() == long.Parse(cash[1])).getName());
+                    cashierComboBox.SelectedItem = cashierComboBox.Items[0];
+                    priceComboBox.Items.Add(cash[0]);
+                    priceComboBox.SelectedItem = cash[0];
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show("Произошла ошибка. Подробности:\n"+e.Message);
+                    MessageBox.Show("Попробуйте выбрать другую дату");
+                }
             }
             else
             {
-
                 cashierComboBox.Items.AddRange(cashiers.Select(x => x.getName()).ToArray());
                 if (cashierComboBox.Items.Count != 0)
                     cashierComboBox.SelectedItem = cashierComboBox.Items[0];
@@ -93,7 +100,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         {
             Ship ship = ships.Find(x => x.getName().Equals(shipsComboBox.SelectedItem.ToString()));
             int passCount = passDataGridView.Rows.Cast<DataGridViewRow>().ToList().Sum(x => Int32.Parse(x.Cells[1].Value.ToString()));
-            if (ship.getCapacity() < passCount) MessageBox.Show("Вместимость выбранного судна меньше количества пассажиров. Выберите другое судно или разделить пассажиров на два рейса");
+            if (ship.getCapacity() < passCount) MessageBox.Show("Вместимость выбранного судна  (" + ship.getCapacity() + ") меньше количества пассажиров. Выберите другое судно или разделить пассажиров на два рейса");
             else if (passCount < 1) MessageBox.Show("Судно не может совершать рейс пустым");
             else
             {

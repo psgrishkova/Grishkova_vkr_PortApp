@@ -63,5 +63,11 @@ namespace Grishkova_vkr_PortApp.Forms
         {
             operationalDataComboBox.SelectedIndex = 0;
         }
+
+        private void MenuForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Role.authForm.repaint();
+            Role.authForm.Show();
+        }
     }
 }

@@ -31,6 +31,19 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
         {
             this.components = new System.ComponentModel.Container();
             this.vesselsDataGridView = new System.Windows.Forms.DataGridView();
+            this.Номер_рейса = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Время_рейса = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Название_маршрута = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ФИО_сотрудника = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Название_судна = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Доход_за_рейс = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фИОсотрудникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиесуднаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.времярейсаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.доходзарейсDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.номеррейсаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиемаршрутаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vesselsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.demoDataSet1 = new Grishkova_vkr_PortApp.demoDataSet();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -46,19 +59,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.vesselsTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.VesselsTableAdapter();
             this.вахтенный_журналTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Вахтенный_журналTableAdapter();
             this.прайс_листTableAdapter1 = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Прайс_листTableAdapter();
-            this.Номер_рейса = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Время_рейса = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Название_маршрута = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ФИО_сотрудника = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Название_судна = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Доход_за_рейс = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.фИОсотрудникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиесуднаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.времярейсаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.датаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.доходзарейсDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.номеррейсаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиемаршрутаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.vesselsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vesselsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.demoDataSet1)).BeginInit();
@@ -98,101 +98,6 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.vesselsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vesselsDataGridView.Size = new System.Drawing.Size(478, 298);
             this.vesselsDataGridView.TabIndex = 0;
-            // 
-            // vesselsBindingSource
-            // 
-            this.vesselsBindingSource.DataMember = "Vessels";
-            this.vesselsBindingSource.DataSource = this.demoDataSet1;
-            // 
-            // demoDataSet1
-            // 
-            this.demoDataSet1.DataSetName = "demoDataSet";
-            this.demoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.менюToolStripMenuItem,
-            this.справкаToolStripMenuItem,
-            this.выходToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(503, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // менюToolStripMenuItem
-            // 
-            this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
-            this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.менюToolStripMenuItem.Text = "Меню";
-            this.менюToolStripMenuItem.Click += new System.EventHandler(this.менюToolStripMenuItem_Click);
-            // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.справкаToolStripMenuItem.Text = "Справка";
-            // 
-            // выходToolStripMenuItem
-            // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.выходToolStripMenuItem.Text = "Выход";
-            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
-            // 
-            // dateTimePicker
-            // 
-            this.dateTimePicker.Location = new System.Drawing.Point(13, 37);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(137, 20);
-            this.dateTimePicker.TabIndex = 2;
-            // 
-            // setDateButton
-            // 
-            this.setDateButton.Location = new System.Drawing.Point(156, 37);
-            this.setDateButton.Name = "setDateButton";
-            this.setDateButton.Size = new System.Drawing.Size(75, 20);
-            this.setDateButton.TabIndex = 3;
-            this.setDateButton.Text = "Применить";
-            this.setDateButton.UseVisualStyleBackColor = true;
-            this.setDateButton.Click += new System.EventHandler(this.setDateButton_Click);
-            // 
-            // addButton
-            // 
-            this.addButton.Location = new System.Drawing.Point(416, 39);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 20);
-            this.addButton.TabIndex = 4;
-            this.addButton.Text = "Добавить";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
-            // рейсBindingSource
-            // 
-            this.рейсBindingSource.DataMember = "Рейс";
-            this.рейсBindingSource.DataSource = this.demoDataSet;
-            // 
-            // demoDataSet
-            // 
-            this.demoDataSet.DataSetName = "demoDataSet";
-            this.demoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // рейсTableAdapter
-            // 
-            this.рейсTableAdapter.ClearBeforeFill = true;
-            // 
-            // vesselsTableAdapter
-            // 
-            this.vesselsTableAdapter.ClearBeforeFill = true;
-            // 
-            // вахтенный_журналTableAdapter1
-            // 
-            this.вахтенный_журналTableAdapter1.ClearBeforeFill = true;
-            // 
-            // прайс_листTableAdapter1
-            // 
-            this.прайс_листTableAdapter1.ClearBeforeFill = true;
             // 
             // Номер_рейса
             // 
@@ -311,6 +216,101 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.названиемаршрутаDataGridViewTextBoxColumn.Visible = false;
             this.названиемаршрутаDataGridViewTextBoxColumn.Width = 69;
             // 
+            // vesselsBindingSource
+            // 
+            this.vesselsBindingSource.DataMember = "Vessels";
+            this.vesselsBindingSource.DataSource = this.demoDataSet1;
+            // 
+            // demoDataSet1
+            // 
+            this.demoDataSet1.DataSetName = "demoDataSet";
+            this.demoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.менюToolStripMenuItem,
+            this.справкаToolStripMenuItem,
+            this.выходToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(503, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // менюToolStripMenuItem
+            // 
+            this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
+            this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.менюToolStripMenuItem.Text = "Меню";
+            this.менюToolStripMenuItem.Click += new System.EventHandler(this.менюToolStripMenuItem_Click);
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(13, 37);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(137, 20);
+            this.dateTimePicker.TabIndex = 2;
+            // 
+            // setDateButton
+            // 
+            this.setDateButton.Location = new System.Drawing.Point(156, 37);
+            this.setDateButton.Name = "setDateButton";
+            this.setDateButton.Size = new System.Drawing.Size(75, 20);
+            this.setDateButton.TabIndex = 3;
+            this.setDateButton.Text = "Применить";
+            this.setDateButton.UseVisualStyleBackColor = true;
+            this.setDateButton.Click += new System.EventHandler(this.setDateButton_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(416, 39);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 20);
+            this.addButton.TabIndex = 4;
+            this.addButton.Text = "Добавить";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // рейсBindingSource
+            // 
+            this.рейсBindingSource.DataMember = "Рейс";
+            this.рейсBindingSource.DataSource = this.demoDataSet;
+            // 
+            // demoDataSet
+            // 
+            this.demoDataSet.DataSetName = "demoDataSet";
+            this.demoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // рейсTableAdapter
+            // 
+            this.рейсTableAdapter.ClearBeforeFill = true;
+            // 
+            // vesselsTableAdapter
+            // 
+            this.vesselsTableAdapter.ClearBeforeFill = true;
+            // 
+            // вахтенный_журналTableAdapter1
+            // 
+            this.вахтенный_журналTableAdapter1.ClearBeforeFill = true;
+            // 
+            // прайс_листTableAdapter1
+            // 
+            this.прайс_листTableAdapter1.ClearBeforeFill = true;
+            // 
             // Vessels
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,6 +328,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Рейсы";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Vessels_FormClosed);
             this.Load += new System.EventHandler(this.Vessels_Load);
             ((System.ComponentModel.ISupportInitialize)(this.vesselsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vesselsBindingSource)).EndInit();

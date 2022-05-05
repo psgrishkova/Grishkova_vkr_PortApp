@@ -117,6 +117,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Учет топлива";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FuelAccountingForm_FormClosed);
             this.Load += new System.EventHandler(this.FuelAccountingForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

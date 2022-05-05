@@ -72,6 +72,7 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             this.MaximizeBox = false;
             this.Name = "AddSetCategoryForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Категория граждан";
             this.ResumeLayout(false);
             this.PerformLayout();

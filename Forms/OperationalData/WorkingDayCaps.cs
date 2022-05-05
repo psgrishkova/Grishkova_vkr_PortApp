@@ -165,5 +165,11 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             Role.authForm.repaint();
             Role.authForm.Show();
         }
+
+        private void WorkingDayCaps_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
+        }
     }
 }

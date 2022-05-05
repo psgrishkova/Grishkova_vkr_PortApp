@@ -128,7 +128,8 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
 
                 remains += double.Parse(fuelDataGridView.SelectedRows[0].Cells[1].Value.ToString());
                 capsComboBox.Items.Add(fuelDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-
+                if (capsComboBox.Items.Count != 0)
+                    capsComboBox.SelectedItem = capsComboBox.Items[0];
                 dataTable2TableAdapter.FillFuelByDay(this.demoDataSet.DataTable2, date.Date.ToString());
 
                 givedVolumetextBox.Text = (double.Parse(receiptVolumeTextBox.Text) - remains).ToString();
@@ -171,7 +172,20 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show(
+                "Вы уверены, что хотите закончить выдачу? После выхода нельзя будет внести изменения.",
+                "Информация",
+                MessageBoxButtons.YesNo
+                );
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                new FuelAccountingForm().Show();
+            }
+        }
+
+        private void Fuel_FormClosed(object sender, FormClosedEventArgs e)
+        {
             new FuelAccountingForm().Show();
         }
     }

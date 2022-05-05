@@ -140,6 +140,7 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             this.MaximizeBox = false;
             this.Name = "AddSetStaffForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Персонал";
             this.ResumeLayout(false);
             this.PerformLayout();

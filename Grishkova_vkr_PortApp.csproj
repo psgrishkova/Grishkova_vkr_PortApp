@@ -59,6 +59,7 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\OperationalData\CashController.cs" />
     <Compile Include="Controllers\OperationalData\FuelController.cs" />
+    <Compile Include="Controllers\ReferenceData\PriceListController.cs" />
     <Compile Include="Controllers\OperationalData\WorkingDayController.cs" />
     <Compile Include="Controllers\ReferenceData\AccountController.cs" />
     <Compile Include="Controllers\ReferenceData\CategoryController.cs" />
@@ -102,6 +103,12 @@
     </Compile>
     <Compile Include="Forms\addSetForms\AddSetNavForm.Designer.cs">
       <DependentUpon>AddSetNavForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\addSetForms\AddSetPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\addSetForms\AddSetPrice.Designer.cs">
+      <DependentUpon>AddSetPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\addSetForms\AddSetRouteForm.cs">
       <SubType>Form</SubType>
@@ -234,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\addSetForms\AddSetNavForm.resx">
       <DependentUpon>AddSetNavForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\addSetForms\AddSetPrice.resx">
+      <DependentUpon>AddSetPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\addSetForms\AddSetRouteForm.resx">
       <DependentUpon>AddSetRouteForm.cs</DependentUpon>

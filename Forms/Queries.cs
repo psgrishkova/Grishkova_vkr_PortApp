@@ -93,5 +93,11 @@ namespace Grishkova_vkr_PortApp.Forms
             Role.authForm.repaint();
             Role.authForm.Show();
         }
+
+        private void Queries_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Role.menu.repaint();
+            Role.menu.Show();
+        }
     }
 }
