@@ -61,6 +61,7 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             // 
             // role_comboBox
             // 
+            this.role_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.role_comboBox.FormattingEnabled = true;
             this.role_comboBox.Items.AddRange(new object[] {
             "Капитан",

@@ -45,6 +45,7 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             // 
             // routeComboBox
             // 
+            this.routeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.routeComboBox.FormattingEnabled = true;
             this.routeComboBox.Location = new System.Drawing.Point(89, 52);
             this.routeComboBox.Name = "routeComboBox";
@@ -88,6 +89,7 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             // 
             // categoryComboBox
             // 
+            this.categoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoryComboBox.FormattingEnabled = true;
             this.categoryComboBox.Location = new System.Drawing.Point(89, 79);
             this.categoryComboBox.Name = "categoryComboBox";
@@ -122,6 +124,7 @@ namespace Grishkova_vkr_PortApp.Forms.addSetForms
             // 
             // priceNumComboBox
             // 
+            this.priceNumComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.priceNumComboBox.FormattingEnabled = true;
             this.priceNumComboBox.Location = new System.Drawing.Point(89, 25);
             this.priceNumComboBox.Name = "priceNumComboBox";

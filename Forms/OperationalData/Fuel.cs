@@ -158,6 +158,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
 
         private void менюToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            fuelAccountingForm.Close();
             Role.menu.repaint();
             Role.menu.Show();
             this.Close();
@@ -180,13 +181,14 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             if (result == DialogResult.Yes)
             {
                 this.Close();
-                new FuelAccountingForm().Show();
+                fuelAccountingForm.Show();
             }
         }
 
         private void Fuel_FormClosed(object sender, FormClosedEventArgs e)
         {
-            new FuelAccountingForm().Show();
+            Role.menu.repaint();
+            Role.menu.Show();
         }
     }
 }

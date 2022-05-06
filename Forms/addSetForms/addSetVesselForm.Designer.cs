@@ -145,6 +145,7 @@ namespace Grishkova_vkr_PortApp.Forms.addForms
             // 
             // type_comboBox
             // 
+            this.type_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.type_comboBox.FormattingEnabled = true;
             this.type_comboBox.Items.AddRange(new object[] {
             "Пассажирский",

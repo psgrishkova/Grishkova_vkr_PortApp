@@ -69,7 +69,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.referenceData_button.Location = new System.Drawing.Point(60, 88);
             this.referenceData_button.Name = "referenceData_button";
             this.referenceData_button.Size = new System.Drawing.Size(155, 33);
-            this.referenceData_button.TabIndex = 1;
+            this.referenceData_button.TabIndex = 0;
             this.referenceData_button.Text = "Справочные данные";
             this.referenceData_button.UseVisualStyleBackColor = true;
             this.referenceData_button.Click += new System.EventHandler(this.referenceData_button_Click);
@@ -79,7 +79,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.report_button.Location = new System.Drawing.Point(60, 188);
             this.report_button.Name = "report_button";
             this.report_button.Size = new System.Drawing.Size(155, 33);
-            this.report_button.TabIndex = 3;
+            this.report_button.TabIndex = 2;
             this.report_button.Text = "Отчеты";
             this.report_button.UseVisualStyleBackColor = true;
             this.report_button.Click += new System.EventHandler(this.report_button_Click);
@@ -89,7 +89,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.queries_button.Location = new System.Drawing.Point(60, 238);
             this.queries_button.Name = "queries_button";
             this.queries_button.Size = new System.Drawing.Size(155, 33);
-            this.queries_button.TabIndex = 4;
+            this.queries_button.TabIndex = 3;
             this.queries_button.Text = "Запросы";
             this.queries_button.UseVisualStyleBackColor = true;
             this.queries_button.Click += new System.EventHandler(this.queries_button_Click);
@@ -117,7 +117,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.operationalDataComboBox.Location = new System.Drawing.Point(60, 145);
             this.operationalDataComboBox.Name = "operationalDataComboBox";
             this.operationalDataComboBox.Size = new System.Drawing.Size(155, 21);
-            this.operationalDataComboBox.TabIndex = 6;
+            this.operationalDataComboBox.TabIndex = 1;
             this.operationalDataComboBox.SelectedValueChanged += new System.EventHandler(this.operationalDataComboBox_SelectedValueChanged);
             // 
             // MenuForm

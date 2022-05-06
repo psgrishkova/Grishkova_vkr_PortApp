@@ -151,6 +151,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             // driversComboBox
             // 
+            this.driversComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.driversComboBox.FormattingEnabled = true;
             this.driversComboBox.Location = new System.Drawing.Point(363, 16);
             this.driversComboBox.Name = "driversComboBox";
@@ -209,6 +210,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             // capsComboBox
             // 
+            this.capsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.capsComboBox.FormattingEnabled = true;
             this.capsComboBox.Location = new System.Drawing.Point(69, 19);
             this.capsComboBox.Name = "capsComboBox";

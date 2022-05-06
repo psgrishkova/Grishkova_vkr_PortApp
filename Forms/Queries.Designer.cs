@@ -94,6 +94,7 @@ namespace Grishkova_vkr_PortApp.Forms
             // 
             // queryComboBox
             // 
+            this.queryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.queryComboBox.DropDownWidth = 300;
             this.queryComboBox.FormattingEnabled = true;
             this.queryComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;

@@ -29,7 +29,14 @@ namespace Grishkova_vkr_PortApp.Forms
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            openAddSetForm(referenceData_tabControl.SelectedIndex, null);
+            try
+            {
+                openAddSetForm(referenceData_tabControl.SelectedIndex, null);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Возникла ошибка. Попробуйте еще раз.");
+            }
         }
 
         private void delete_button_Click(object sender, EventArgs e)
@@ -55,16 +62,23 @@ namespace Grishkova_vkr_PortApp.Forms
 
         private void set_button_Click(object sender, EventArgs e)
         {
-            if (referenceData_tabControl.SelectedIndex != 7)
+            try
             {
-                if (grid.SelectedRows.Count == 0)
-                    MessageBox.Show("Выберите строку для изменения");
-                else
+                if (referenceData_tabControl.SelectedIndex != 7)
                 {
-                    openAddSetForm(referenceData_tabControl.SelectedIndex, grid.SelectedRows[0].Cells.Cast<DataGridViewCell>().ToList().Select(x => x.Value).ToArray());
+                    if (grid.SelectedRows.Count == 0)
+                        MessageBox.Show("Выберите строку для изменения");
+                    else
+                    {
+                        openAddSetForm(referenceData_tabControl.SelectedIndex, grid.SelectedRows[0].Cells.Cast<DataGridViewCell>().ToList().Select(x => x.Value).ToArray());
+                    }
                 }
+                else MessageBox.Show("Прайс-листы редактировать нельзя.");
             }
-            else MessageBox.Show("Прайс-листы редактировать нельзя.");
+            catch(Exception)
+            {
+                MessageBox.Show("Возникла ошибка. Попробуйте еще раз.");
+            }
         }
 
         private void referenceData_tabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,69 +173,82 @@ namespace Grishkova_vkr_PortApp.Forms
 
         private void getBy_button_Click(object sender, EventArgs e)
         {
-            string filter = "[" + getBy_comboBox.SelectedItem.ToString() + "] = '" + getBy_textBox.Text + "'";
-            if (!string.IsNullOrEmpty(getBy_textBox.Text))
+            try
             {
-                switch (referenceData_tabControl.SelectedIndex)
+                string filter = "[" + getBy_comboBox.SelectedItem.ToString() + "] = '" + getBy_textBox.Text + "'";
+                if (!string.IsNullOrEmpty(getBy_textBox.Text))
                 {
-                    case 0:
-                        судноBindingSource.Filter = filter;
-                        break;
-                    case 1:
-                        навигацияBindingSource.Filter = filter;
-                        break;
-                    case 2:
-                        маршрутBindingSource.Filter = filter;
-                        break;
-                    case 3:
-                        аккаунтBindingSource.Filter = filter;
-                        break;
-                    case 4:
-                        компанияBindingSource.Filter = filter;
-                        break;
-                    case 5:
-                        категориягражданBindingSource.Filter = filter;
-                        break;
-                    case 6:
-                        персоналBindingSource.Filter = filter;
-                        break;
-                    case 7:
-                        прайслистBindingSource1.Filter = filter;
-                        break;
+                    switch (referenceData_tabControl.SelectedIndex)
+                    {
+                        case 0:
+                            судноBindingSource.Filter = filter;
+                            break;
+                        case 1:
+                            навигацияBindingSource.Filter = filter;
+                            break;
+                        case 2:
+                            маршрутBindingSource.Filter = filter;
+                            break;
+                        case 3:
+                            аккаунтBindingSource.Filter = filter;
+                            break;
+                        case 4:
+                            компанияBindingSource.Filter = filter;
+                            break;
+                        case 5:
+                            категориягражданBindingSource.Filter = filter;
+                            break;
+                        case 6:
+                            персоналBindingSource.Filter = filter;
+                            break;
+                        case 7:
+                            прайслистBindingSource1.Filter = filter;
+                            break;
+                    }
                 }
+                else MessageBox.Show("Введите данные для поиска");
+            }catch (Exception)
+            {
+                MessageBox.Show("Возникла ошибка. Попробуйте еще раз");
             }
-            else MessageBox.Show("Введите данные для поиска");
         }
 
         private void cancel_button_Click(object sender, EventArgs e)
         {
-            судноBindingSource.RemoveFilter();
-            switch (referenceData_tabControl.SelectedIndex)
+            try
             {
-                case 0:
-                    судноBindingSource.RemoveFilter();
-                    break;
-                case 1:
-                    навигацияBindingSource.RemoveFilter();
-                    break;
-                case 2:
-                    маршрутBindingSource.RemoveFilter();
-                    break;
-                case 3:
-                    аккаунтBindingSource.RemoveFilter();
-                    break;
-                case 4:
-                    компанияBindingSource.RemoveFilter();
-                    break;
-                case 5:
-                    категориягражданBindingSource.RemoveFilter();
-                    break;
-                case 6:
-                    персоналBindingSource.RemoveFilter();
-                    break;
-                case 7:
-                    прайслистBindingSource1.RemoveFilter();
-                    break;
+                судноBindingSource.RemoveFilter();
+                switch (referenceData_tabControl.SelectedIndex)
+                {
+                    case 0:
+                        судноBindingSource.RemoveFilter();
+                        break;
+                    case 1:
+                        навигацияBindingSource.RemoveFilter();
+                        break;
+                    case 2:
+                        маршрутBindingSource.RemoveFilter();
+                        break;
+                    case 3:
+                        аккаунтBindingSource.RemoveFilter();
+                        break;
+                    case 4:
+                        компанияBindingSource.RemoveFilter();
+                        break;
+                    case 5:
+                        категориягражданBindingSource.RemoveFilter();
+                        break;
+                    case 6:
+                        персоналBindingSource.RemoveFilter();
+                        break;
+                    case 7:
+                        прайслистBindingSource1.RemoveFilter();
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Возникла ошибка. Попробуйте еще раз.");
             }
         }
 

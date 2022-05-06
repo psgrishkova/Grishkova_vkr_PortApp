@@ -180,6 +180,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             // nameComboBox
             // 
+            this.nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nameComboBox.FormattingEnabled = true;
             this.nameComboBox.Location = new System.Drawing.Point(46, 21);
             this.nameComboBox.Name = "nameComboBox";
@@ -207,6 +208,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             // vesselComboBox
             // 
+            this.vesselComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vesselComboBox.FormattingEnabled = true;
             this.vesselComboBox.Location = new System.Drawing.Point(296, 21);
             this.vesselComboBox.Name = "vesselComboBox";

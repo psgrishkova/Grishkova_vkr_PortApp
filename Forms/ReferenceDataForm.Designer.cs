@@ -92,6 +92,14 @@ namespace Grishkova_vkr_PortApp.Forms
             this.номертелефонаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датарожденияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.персоналBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.датасоставленияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодпрайслистаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.номермаршрутаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.стоимостьбилетаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.категорияDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.прайслистBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.судноTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.СудноTableAdapter();
             this.навигацияTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.НавигацияTableAdapter();
             this.маршрутTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.МаршрутTableAdapter();
@@ -101,14 +109,6 @@ namespace Grishkova_vkr_PortApp.Forms
             this.персоналTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.ПерсоналTableAdapter();
             this.прайслистBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.прайс_листTableAdapter = new Grishkova_vkr_PortApp.demoDataSetTableAdapters.Прайс_листTableAdapter();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.прайслистBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.датасоставленияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодпрайслистаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.номермаршрутаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.стоимостьбилетаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.категорияDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.referenceData_groupBox.SuspendLayout();
             this.menu.SuspendLayout();
             this.referenceData_tabControl.SuspendLayout();
@@ -134,10 +134,10 @@ namespace Grishkova_vkr_PortApp.Forms
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.прайслистBindingSource)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.прайслистBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.прайслистBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // referenceData_groupBox
@@ -169,6 +169,7 @@ namespace Grishkova_vkr_PortApp.Forms
             // 
             // getBy_comboBox
             // 
+            this.getBy_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.getBy_comboBox.FormattingEnabled = true;
             this.getBy_comboBox.Location = new System.Drawing.Point(66, 49);
             this.getBy_comboBox.Name = "getBy_comboBox";
@@ -295,6 +296,8 @@ namespace Grishkova_vkr_PortApp.Forms
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -353,7 +356,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.вместимостьDataGridViewTextBoxColumn.HeaderText = "Вмест.";
             this.вместимостьDataGridViewTextBoxColumn.Name = "вместимостьDataGridViewTextBoxColumn";
             this.вместимостьDataGridViewTextBoxColumn.ReadOnly = true;
-            this.вместимостьDataGridViewTextBoxColumn.Width = 60;
+            this.вместимостьDataGridViewTextBoxColumn.Width = 85;
             // 
             // датапоследнегоТОDataGridViewTextBoxColumn
             // 
@@ -362,6 +365,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.датапоследнегоТОDataGridViewTextBoxColumn.HeaderText = "ТО";
             this.датапоследнегоТОDataGridViewTextBoxColumn.Name = "датапоследнегоТОDataGridViewTextBoxColumn";
             this.датапоследнегоТОDataGridViewTextBoxColumn.ReadOnly = true;
+            this.датапоследнегоТОDataGridViewTextBoxColumn.Width = 78;
             // 
             // судноBindingSource
             // 
@@ -389,6 +393,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.номернавигационногопериодаDataGridViewTextBoxColumn,
@@ -416,7 +421,6 @@ namespace Grishkova_vkr_PortApp.Forms
             this.датаначаланавигацииDataGridViewTextBoxColumn.HeaderText = "Дата начала навигации";
             this.датаначаланавигацииDataGridViewTextBoxColumn.Name = "датаначаланавигацииDataGridViewTextBoxColumn";
             this.датаначаланавигацииDataGridViewTextBoxColumn.ReadOnly = true;
-            this.датаначаланавигацииDataGridViewTextBoxColumn.Width = 160;
             // 
             // датазавершениянавигацииDataGridViewTextBoxColumn
             // 
@@ -424,7 +428,6 @@ namespace Grishkova_vkr_PortApp.Forms
             this.датазавершениянавигацииDataGridViewTextBoxColumn.HeaderText = "Дата завершения навигации";
             this.датазавершениянавигацииDataGridViewTextBoxColumn.Name = "датазавершениянавигацииDataGridViewTextBoxColumn";
             this.датазавершениянавигацииDataGridViewTextBoxColumn.ReadOnly = true;
-            this.датазавершениянавигацииDataGridViewTextBoxColumn.Width = 160;
             // 
             // навигацияBindingSource
             // 
@@ -445,6 +448,8 @@ namespace Grishkova_vkr_PortApp.Forms
             // 
             this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AllowUserToResizeColumns = false;
+            this.dataGridView3.AllowUserToResizeRows = false;
             this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -497,7 +502,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.описаниемаршрутаDataGridViewTextBoxColumn.HeaderText = "Описание";
             this.описаниемаршрутаDataGridViewTextBoxColumn.Name = "описаниемаршрутаDataGridViewTextBoxColumn";
             this.описаниемаршрутаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.описаниемаршрутаDataGridViewTextBoxColumn.Width = 90;
+            this.описаниемаршрутаDataGridViewTextBoxColumn.Width = 93;
             // 
             // маршрутBindingSource
             // 
@@ -519,6 +524,8 @@ namespace Grishkova_vkr_PortApp.Forms
             // 
             this.dataGridView4.AllowUserToAddRows = false;
             this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AllowUserToResizeColumns = false;
+            this.dataGridView4.AllowUserToResizeRows = false;
             this.dataGridView4.AutoGenerateColumns = false;
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -528,6 +535,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.рольDataGridViewTextBoxColumn});
             this.dataGridView4.DataSource = this.аккаунтBindingSource;
             this.dataGridView4.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView4.MultiSelect = false;
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -589,6 +597,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.физическийадресDataGridViewTextBoxColumn});
             this.dataGridView5.DataSource = this.компанияBindingSource;
             this.dataGridView5.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView5.MultiSelect = false;
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.ReadOnly = true;
             this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -650,6 +659,8 @@ namespace Grishkova_vkr_PortApp.Forms
             // 
             this.dataGridView6.AllowUserToAddRows = false;
             this.dataGridView6.AllowUserToDeleteRows = false;
+            this.dataGridView6.AllowUserToResizeColumns = false;
+            this.dataGridView6.AllowUserToResizeRows = false;
             this.dataGridView6.AutoGenerateColumns = false;
             this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -657,6 +668,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.категорияDataGridViewTextBoxColumn});
             this.dataGridView6.DataSource = this.категориягражданBindingSource;
             this.dataGridView6.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView6.MultiSelect = false;
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.ReadOnly = true;
             this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -690,6 +702,8 @@ namespace Grishkova_vkr_PortApp.Forms
             // 
             this.dataGridView7.AllowUserToAddRows = false;
             this.dataGridView7.AllowUserToDeleteRows = false;
+            this.dataGridView7.AllowUserToResizeColumns = false;
+            this.dataGridView7.AllowUserToResizeRows = false;
             this.dataGridView7.AutoGenerateColumns = false;
             this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -732,6 +746,81 @@ namespace Grishkova_vkr_PortApp.Forms
             this.персоналBindingSource.DataMember = "Персонал";
             this.персоналBindingSource.DataSource = this.demoDataSet;
             // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.dataGridView8);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(479, 210);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Цены";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView8
+            // 
+            this.dataGridView8.AllowUserToAddRows = false;
+            this.dataGridView8.AllowUserToDeleteRows = false;
+            this.dataGridView8.AllowUserToResizeColumns = false;
+            this.dataGridView8.AllowUserToResizeRows = false;
+            this.dataGridView8.AutoGenerateColumns = false;
+            this.dataGridView8.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.датасоставленияDataGridViewTextBoxColumn,
+            this.кодпрайслистаDataGridViewTextBoxColumn,
+            this.номермаршрутаDataGridViewTextBoxColumn1,
+            this.стоимостьбилетаDataGridViewTextBoxColumn,
+            this.категорияDataGridViewTextBoxColumn1});
+            this.dataGridView8.DataSource = this.прайслистBindingSource1;
+            this.dataGridView8.Location = new System.Drawing.Point(6, 7);
+            this.dataGridView8.MultiSelect = false;
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.ReadOnly = true;
+            this.dataGridView8.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView8.Size = new System.Drawing.Size(466, 197);
+            this.dataGridView8.TabIndex = 7;
+            // 
+            // датасоставленияDataGridViewTextBoxColumn
+            // 
+            this.датасоставленияDataGridViewTextBoxColumn.DataPropertyName = "Дата_составления";
+            this.датасоставленияDataGridViewTextBoxColumn.HeaderText = "Дата составления";
+            this.датасоставленияDataGridViewTextBoxColumn.Name = "датасоставленияDataGridViewTextBoxColumn";
+            this.датасоставленияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // кодпрайслистаDataGridViewTextBoxColumn
+            // 
+            this.кодпрайслистаDataGridViewTextBoxColumn.DataPropertyName = "Код_прайс_листа";
+            this.кодпрайслистаDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодпрайслистаDataGridViewTextBoxColumn.Name = "кодпрайслистаDataGridViewTextBoxColumn";
+            this.кодпрайслистаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // номермаршрутаDataGridViewTextBoxColumn1
+            // 
+            this.номермаршрутаDataGridViewTextBoxColumn1.DataPropertyName = "Номер_маршрута";
+            this.номермаршрутаDataGridViewTextBoxColumn1.HeaderText = "№ маршрута";
+            this.номермаршрутаDataGridViewTextBoxColumn1.Name = "номермаршрутаDataGridViewTextBoxColumn1";
+            this.номермаршрутаDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // стоимостьбилетаDataGridViewTextBoxColumn
+            // 
+            this.стоимостьбилетаDataGridViewTextBoxColumn.DataPropertyName = "Стоимость_билета";
+            this.стоимостьбилетаDataGridViewTextBoxColumn.HeaderText = "Стоимость";
+            this.стоимостьбилетаDataGridViewTextBoxColumn.Name = "стоимостьбилетаDataGridViewTextBoxColumn";
+            this.стоимостьбилетаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // категорияDataGridViewTextBoxColumn1
+            // 
+            this.категорияDataGridViewTextBoxColumn1.DataPropertyName = "Категория";
+            this.категорияDataGridViewTextBoxColumn1.HeaderText = "Категория";
+            this.категорияDataGridViewTextBoxColumn1.Name = "категорияDataGridViewTextBoxColumn1";
+            this.категорияDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // прайслистBindingSource1
+            // 
+            this.прайслистBindingSource1.DataMember = "Прайс_лист";
+            this.прайслистBindingSource1.DataSource = this.demoDataSet;
+            // 
             // судноTableAdapter
             // 
             this.судноTableAdapter.ClearBeforeFill = true;
@@ -768,79 +857,6 @@ namespace Grishkova_vkr_PortApp.Forms
             // прайс_листTableAdapter
             // 
             this.прайс_листTableAdapter.ClearBeforeFill = true;
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.dataGridView8);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(479, 210);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "Цены";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView8
-            // 
-            this.dataGridView8.AllowUserToAddRows = false;
-            this.dataGridView8.AllowUserToDeleteRows = false;
-            this.dataGridView8.AutoGenerateColumns = false;
-            this.dataGridView8.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.датасоставленияDataGridViewTextBoxColumn,
-            this.кодпрайслистаDataGridViewTextBoxColumn,
-            this.номермаршрутаDataGridViewTextBoxColumn1,
-            this.стоимостьбилетаDataGridViewTextBoxColumn,
-            this.категорияDataGridViewTextBoxColumn1});
-            this.dataGridView8.DataSource = this.прайслистBindingSource1;
-            this.dataGridView8.Location = new System.Drawing.Point(6, 7);
-            this.dataGridView8.MultiSelect = false;
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.ReadOnly = true;
-            this.dataGridView8.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView8.Size = new System.Drawing.Size(466, 197);
-            this.dataGridView8.TabIndex = 7;
-            // 
-            // прайслистBindingSource1
-            // 
-            this.прайслистBindingSource1.DataMember = "Прайс_лист";
-            this.прайслистBindingSource1.DataSource = this.demoDataSet;
-            // 
-            // датасоставленияDataGridViewTextBoxColumn
-            // 
-            this.датасоставленияDataGridViewTextBoxColumn.DataPropertyName = "Дата_составления";
-            this.датасоставленияDataGridViewTextBoxColumn.HeaderText = "Дата составления";
-            this.датасоставленияDataGridViewTextBoxColumn.Name = "датасоставленияDataGridViewTextBoxColumn";
-            this.датасоставленияDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // кодпрайслистаDataGridViewTextBoxColumn
-            // 
-            this.кодпрайслистаDataGridViewTextBoxColumn.DataPropertyName = "Код_прайс_листа";
-            this.кодпрайслистаDataGridViewTextBoxColumn.HeaderText = "Код";
-            this.кодпрайслистаDataGridViewTextBoxColumn.Name = "кодпрайслистаDataGridViewTextBoxColumn";
-            this.кодпрайслистаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // номермаршрутаDataGridViewTextBoxColumn1
-            // 
-            this.номермаршрутаDataGridViewTextBoxColumn1.DataPropertyName = "Номер_маршрута";
-            this.номермаршрутаDataGridViewTextBoxColumn1.HeaderText = "№ маршрута";
-            this.номермаршрутаDataGridViewTextBoxColumn1.Name = "номермаршрутаDataGridViewTextBoxColumn1";
-            this.номермаршрутаDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // стоимостьбилетаDataGridViewTextBoxColumn
-            // 
-            this.стоимостьбилетаDataGridViewTextBoxColumn.DataPropertyName = "Стоимость_билета";
-            this.стоимостьбилетаDataGridViewTextBoxColumn.HeaderText = "Стоимость";
-            this.стоимостьбилетаDataGridViewTextBoxColumn.Name = "стоимостьбилетаDataGridViewTextBoxColumn";
-            this.стоимостьбилетаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // категорияDataGridViewTextBoxColumn1
-            // 
-            this.категорияDataGridViewTextBoxColumn1.DataPropertyName = "Категория";
-            this.категорияDataGridViewTextBoxColumn1.HeaderText = "Категория";
-            this.категорияDataGridViewTextBoxColumn1.Name = "категорияDataGridViewTextBoxColumn1";
-            this.категорияDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // ReferenceDataForm
             // 
@@ -884,10 +900,10 @@ namespace Grishkova_vkr_PortApp.Forms
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.прайслистBindingSource)).EndInit();
             this.tabPage8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.прайслистBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.прайслистBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -949,16 +965,6 @@ namespace Grishkova_vkr_PortApp.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn номернавигационногопериодаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датаначаланавигацииDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датазавершениянавигацииDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn названиемаршрутаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn номермаршрутаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn пунктотправленияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn пунктприбытияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn описаниемаршрутаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn регистрационныйномерсуднаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn названиесуднаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn типсуднаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn вместимостьDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn датапоследнегоТОDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn названиекомпанииDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn иННDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn номертелефонаDataGridViewTextBoxColumn;
@@ -974,5 +980,15 @@ namespace Grishkova_vkr_PortApp.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn стоимостьбилетаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn категорияDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource прайслистBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn регистрационныйномерсуднаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn названиесуднаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn типсуднаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn вместимостьDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датапоследнегоТОDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn названиемаршрутаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn номермаршрутаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn пунктотправленияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn пунктприбытияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn описаниемаршрутаDataGridViewTextBoxColumn;
     }
 }

@@ -177,6 +177,11 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             Role.authForm.repaint();
             Role.authForm.Show();
         }
+
+        private void routeComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            setGrid();
+        }
     }
 }
 

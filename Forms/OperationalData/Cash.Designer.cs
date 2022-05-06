@@ -67,6 +67,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             // shipsComboBox
             // 
+            this.shipsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.shipsComboBox.FormattingEnabled = true;
             this.shipsComboBox.Location = new System.Drawing.Point(68, 44);
             this.shipsComboBox.Name = "shipsComboBox";
@@ -75,11 +76,13 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             // routeComboBox
             // 
+            this.routeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.routeComboBox.FormattingEnabled = true;
             this.routeComboBox.Location = new System.Drawing.Point(68, 71);
             this.routeComboBox.Name = "routeComboBox";
             this.routeComboBox.Size = new System.Drawing.Size(110, 21);
             this.routeComboBox.TabIndex = 1;
+            this.routeComboBox.SelectedIndexChanged += new System.EventHandler(this.routeComboBox_SelectedIndexChanged_1);
             // 
             // timePicker
             // 
@@ -209,6 +212,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             // priceComboBox
             // 
+            this.priceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.priceComboBox.FormattingEnabled = true;
             this.priceComboBox.Location = new System.Drawing.Point(68, 44);
             this.priceComboBox.Name = "priceComboBox";
@@ -227,6 +231,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
             // 
             // cashierComboBox
             // 
+            this.cashierComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cashierComboBox.FormattingEnabled = true;
             this.cashierComboBox.Location = new System.Drawing.Point(68, 16);
             this.cashierComboBox.Name = "cashierComboBox";
