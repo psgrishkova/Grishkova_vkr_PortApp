@@ -57,6 +57,7 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Role.menu = null;
             this.Close();
             Role.authForm.repaint();
             Role.authForm.Show();
@@ -64,8 +65,11 @@ namespace Grishkova_vkr_PortApp.Forms.Reports
 
         private void SetDatesForReport_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Role.menu.repaint();
-            Role.menu.Show();
+            if (Role.menu != null)
+            {
+                Role.menu.repaint();
+                Role.menu.Show();
+            }
         }
     }
 }

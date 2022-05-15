@@ -173,6 +173,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
 
         private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Role.menu = null;
             this.Close();
             Role.authForm.repaint();
             Role.authForm.Show();

@@ -114,6 +114,7 @@ namespace Grishkova_vkr_PortApp
             this.Controls.Add(this.login_label);
             this.Controls.Add(this.loginButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "SignIn_Form";

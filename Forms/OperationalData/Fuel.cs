@@ -2,13 +2,8 @@
 using Grishkova_vkr_PortApp.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grishkova_vkr_PortApp.Forms.OperationalData
@@ -166,6 +161,7 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Role.menu = null;
             this.Close();
             Role.authForm.repaint();
             Role.authForm.Show();
@@ -187,8 +183,11 @@ namespace Grishkova_vkr_PortApp.Forms.OperationalData
 
         private void Fuel_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Role.menu.repaint();
-            Role.menu.Show();
+            if (Role.menu != null)
+            {
+                Role.menu.repaint();
+                Role.menu.Show();
+            }
         }
     }
 }

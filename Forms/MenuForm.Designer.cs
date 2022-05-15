@@ -131,6 +131,7 @@ namespace Grishkova_vkr_PortApp.Forms
             this.Controls.Add(this.report_button);
             this.Controls.Add(this.referenceData_button);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "MenuForm";
